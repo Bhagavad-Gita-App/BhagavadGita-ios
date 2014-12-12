@@ -398,7 +398,7 @@
 				472EBB491A37F0AE00228EB5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		472EBB4A1A37F0AE00228EB5 /* Build configuration list for PBXNativeTarget "BhagavadGita" */ = {
 			isa = XCConfigurationList;
@@ -407,6 +407,7 @@
 				472EBB4C1A37F0AE00228EB5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
 		};
 		472EBB4D1A37F0AE00228EB5 /* Build configuration list for PBXNativeTarget "BhagavadGitaTests" */ = {
 			isa = XCConfigurationList;
@@ -415,6 +416,7 @@
 				472EBB4F1A37F0AE00228EB5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 	};
