@@ -13,6 +13,20 @@
 		472EBB381A37F0AE00228EB5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 472EBB371A37F0AE00228EB5 /* Images.xcassets */; };
 		472EBB3B1A37F0AE00228EB5 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 472EBB391A37F0AE00228EB5 /* LaunchScreen.xib */; };
 		472EBB471A37F0AE00228EB5 /* BhagavadGitaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472EBB461A37F0AE00228EB5 /* BhagavadGitaTests.swift */; };
+		4746DA721A3E81610089770D /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4746DA6E1A3E81610089770D /* Book.swift */; };
+		4746DA731A3E81610089770D /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4746DA6E1A3E81610089770D /* Book.swift */; };
+		4746DA741A3E81610089770D /* Chapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4746DA6F1A3E81610089770D /* Chapter.swift */; };
+		4746DA751A3E81610089770D /* Chapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4746DA6F1A3E81610089770D /* Chapter.swift */; };
+		4746DA761A3E81610089770D /* JSONDeserializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4746DA701A3E81610089770D /* JSONDeserializable.swift */; };
+		4746DA771A3E81610089770D /* JSONDeserializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4746DA701A3E81610089770D /* JSONDeserializable.swift */; };
+		4746DA781A3E81610089770D /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4746DA711A3E81610089770D /* Section.swift */; };
+		4746DA791A3E81610089770D /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4746DA711A3E81610089770D /* Section.swift */; };
+		4746DA7C1A3E81CB0089770D /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4746DA7B1A3E81CB0089770D /* SwiftyJSON.swift */; };
+		4746DA7D1A3E81CB0089770D /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4746DA7B1A3E81CB0089770D /* SwiftyJSON.swift */; };
+		47E347A91A3E563400DB8CEA /* gita.json in Resources */ = {isa = PBXBuildFile; fileRef = 47E347A81A3E563400DB8CEA /* gita.json */; };
+		47E347AA1A3E563400DB8CEA /* gita.json in Resources */ = {isa = PBXBuildFile; fileRef = 47E347A81A3E563400DB8CEA /* gita.json */; };
+		47E347AC1A3E567C00DB8CEA /* JSONFileReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E347AB1A3E567C00DB8CEA /* JSONFileReader.swift */; };
+		47E347AD1A3E567C00DB8CEA /* JSONFileReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E347AB1A3E567C00DB8CEA /* JSONFileReader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -25,6 +39,19 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		47E347A71A3E560900DB8CEA /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		472EBB2B1A37F0AE00228EB5 /* BhagavadGita.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BhagavadGita.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		472EBB2F1A37F0AE00228EB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -36,6 +63,13 @@
 		472EBB401A37F0AE00228EB5 /* BhagavadGitaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BhagavadGitaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		472EBB451A37F0AE00228EB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		472EBB461A37F0AE00228EB5 /* BhagavadGitaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BhagavadGitaTests.swift; sourceTree = "<group>"; };
+		4746DA6E1A3E81610089770D /* Book.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
+		4746DA6F1A3E81610089770D /* Chapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Chapter.swift; sourceTree = "<group>"; };
+		4746DA701A3E81610089770D /* JSONDeserializable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONDeserializable.swift; sourceTree = "<group>"; };
+		4746DA711A3E81610089770D /* Section.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
+		4746DA7B1A3E81CB0089770D /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
+		47E347A81A3E563400DB8CEA /* gita.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = gita.json; sourceTree = "<group>"; };
+		47E347AB1A3E567C00DB8CEA /* JSONFileReader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONFileReader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +95,9 @@
 			children = (
 				472EBB2D1A37F0AE00228EB5 /* BhagavadGita */,
 				472EBB431A37F0AE00228EB5 /* BhagavadGitaTests */,
+				47E347961A3E551300DB8CEA /* Data */,
+				4746DA6D1A3E81610089770D /* Model */,
+				47E347981A3E551300DB8CEA /* Vendor */,
 				472EBB2C1A37F0AE00228EB5 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -112,6 +149,42 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		4746DA6D1A3E81610089770D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4746DA6E1A3E81610089770D /* Book.swift */,
+				4746DA6F1A3E81610089770D /* Chapter.swift */,
+				4746DA701A3E81610089770D /* JSONDeserializable.swift */,
+				4746DA711A3E81610089770D /* Section.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		4746DA7A1A3E81CB0089770D /* SwiftyJSON */ = {
+			isa = PBXGroup;
+			children = (
+				4746DA7B1A3E81CB0089770D /* SwiftyJSON.swift */,
+			);
+			path = SwiftyJSON;
+			sourceTree = "<group>";
+		};
+		47E347961A3E551300DB8CEA /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				47E347A81A3E563400DB8CEA /* gita.json */,
+				47E347AB1A3E567C00DB8CEA /* JSONFileReader.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		47E347981A3E551300DB8CEA /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				4746DA7A1A3E81CB0089770D /* SwiftyJSON */,
+			);
+			path = Vendor;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -122,6 +195,7 @@
 				472EBB271A37F0AE00228EB5 /* Sources */,
 				472EBB281A37F0AE00228EB5 /* Frameworks */,
 				472EBB291A37F0AE00228EB5 /* Resources */,
+				47E347A71A3E560900DB8CEA /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -194,6 +268,7 @@
 			files = (
 				472EBB361A37F0AE00228EB5 /* Main.storyboard in Resources */,
 				472EBB3B1A37F0AE00228EB5 /* LaunchScreen.xib in Resources */,
+				47E347A91A3E563400DB8CEA /* gita.json in Resources */,
 				472EBB381A37F0AE00228EB5 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -202,6 +277,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				47E347AA1A3E563400DB8CEA /* gita.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -214,6 +290,12 @@
 			files = (
 				472EBB331A37F0AE00228EB5 /* ViewController.swift in Sources */,
 				472EBB311A37F0AE00228EB5 /* AppDelegate.swift in Sources */,
+				4746DA741A3E81610089770D /* Chapter.swift in Sources */,
+				4746DA7C1A3E81CB0089770D /* SwiftyJSON.swift in Sources */,
+				4746DA721A3E81610089770D /* Book.swift in Sources */,
+				4746DA781A3E81610089770D /* Section.swift in Sources */,
+				47E347AC1A3E567C00DB8CEA /* JSONFileReader.swift in Sources */,
+				4746DA761A3E81610089770D /* JSONDeserializable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -221,7 +303,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				47E347AD1A3E567C00DB8CEA /* JSONFileReader.swift in Sources */,
 				472EBB471A37F0AE00228EB5 /* BhagavadGitaTests.swift in Sources */,
+				4746DA731A3E81610089770D /* Book.swift in Sources */,
+				4746DA791A3E81610089770D /* Section.swift in Sources */,
+				4746DA771A3E81610089770D /* JSONDeserializable.swift in Sources */,
+				4746DA7D1A3E81CB0089770D /* SwiftyJSON.swift in Sources */,
+				4746DA751A3E81610089770D /* Chapter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -338,6 +426,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = BhagavadGita/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -348,6 +437,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = BhagavadGita/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
