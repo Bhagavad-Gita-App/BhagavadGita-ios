@@ -6,7 +6,6 @@
 //  Copyright (c) 2014 floydpink. All rights reserved.
 //
 
-import BhagavadGita
 import XCTest
 
 class BhagavadGitaTests: XCTestCase {
@@ -33,26 +32,23 @@ class BhagavadGitaTests: XCTestCase {
     //        }
     //    }
     //
-    func testReadGitaJson() {
+    func testJSONFileReader() {
         let json = JSONFileReader.read(fromFile: "gita")
         XCTAssert(json != nil)
     }
     
     func testGitaBookTitle() {
-        let json = JSONFileReader.read(fromFile: "gita")!
-        let book = Book.deserialize(JSON(data: json))
+        let book = Book.load()
         XCTAssert(book.bookTitle == "ശ്രീമദ് ഭഗവദ്ഗീത (അര്‍ഥസഹിതം)", "Book title is not the expected value")
     }
     
     func testGitaBookChapters() {
-        let json = JSONFileReader.read(fromFile: "gita")!
-        let book = Book.deserialize(JSON(data: json))
+        let book = Book.load()
         XCTAssert(book.chapters.count == 20, "Number of chapters on the JSON is not correct")
     }
     
     func testGitaBookChaptersSections() {
-        let json = JSONFileReader.read(fromFile: "gita")!
-        let book = Book.deserialize(JSON(data: json))
+        let book = Book.load()
         XCTAssert(book.chapters[0].sections.count == 8, "Number of sections in Chapter 1 on the JSON is not correct")
         XCTAssert(book.chapters[1].sections.count == 8, "Number of sections in Chapter 2 on the JSON is not correct")
         XCTAssert(book.chapters[2].sections.count == 35, "Number of sections in Chapter 3 on the JSON is not correct")

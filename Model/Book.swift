@@ -22,4 +22,9 @@ extension Book: JSONDeserializable {
         }
         return Book.create(json["BookTitle"].stringValue, chapters: chapters)
     }
+    
+    static func load() -> Book {
+        let json = JSONFileReader.read(fromFile: "gita")!
+        return Book.deserialize(JSON(data: json))
+    }
 }
