@@ -9,17 +9,17 @@
 import XCTest
 
 class BhagavadGitaTests: XCTestCase {
-    
+
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
-    
+
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
     }
-    
+
     //    func testExample() {
     //        // This is an example of a functional test case.
     //        XCTAssert(true, "Pass")
@@ -36,17 +36,17 @@ class BhagavadGitaTests: XCTestCase {
         let json = JSONFileReader.read(fromFile: "gita")
         XCTAssert(json != nil)
     }
-    
+
     func testGitaBookTitle() {
         let book = Book.load()
         XCTAssert(book.bookTitle == "ശ്രീമദ് ഭഗവദ്ഗീത (അര്‍ഥസഹിതം)", "Book title is not the expected value")
     }
-    
+
     func testGitaBookChapters() {
         let book = Book.load()
         XCTAssert(book.chapters.count == 20, "Number of chapters on the JSON is not correct")
     }
-    
+
     func testGitaBookChaptersSections() {
         let book = Book.load()
         XCTAssert(book.chapters[0].sections.count == 8, "Number of sections in Chapter 1 on the JSON is not correct")
@@ -70,5 +70,5 @@ class BhagavadGitaTests: XCTestCase {
         XCTAssert(book.chapters[18].sections.count == 27, "Number of sections in Chapter 19 on the JSON is not correct")
         XCTAssert(book.chapters[19].sections.count == 75, "Number of sections in Chapter 20 on the JSON is not correct")
     }
-    
+
 }

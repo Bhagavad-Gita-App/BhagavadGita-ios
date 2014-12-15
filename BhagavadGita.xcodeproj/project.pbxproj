@@ -23,6 +23,8 @@
 		4746DA791A3E81610089770D /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4746DA711A3E81610089770D /* Section.swift */; };
 		4746DA7C1A3E81CB0089770D /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4746DA7B1A3E81CB0089770D /* SwiftyJSON.swift */; };
 		4746DA7D1A3E81CB0089770D /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4746DA7B1A3E81CB0089770D /* SwiftyJSON.swift */; };
+		47AB553D1A3F8FD5006A4955 /* ChapterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47AB553C1A3F8FD5006A4955 /* ChapterTableViewCell.swift */; };
+		47AB553F1A3F99CA006A4955 /* ChapterTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 47AB553E1A3F99CA006A4955 /* ChapterTableViewCell.xib */; };
 		47E347A91A3E563400DB8CEA /* gita.json in Resources */ = {isa = PBXBuildFile; fileRef = 47E347A81A3E563400DB8CEA /* gita.json */; };
 		47E347AA1A3E563400DB8CEA /* gita.json in Resources */ = {isa = PBXBuildFile; fileRef = 47E347A81A3E563400DB8CEA /* gita.json */; };
 		47E347AC1A3E567C00DB8CEA /* JSONFileReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E347AB1A3E567C00DB8CEA /* JSONFileReader.swift */; };
@@ -68,6 +70,8 @@
 		4746DA701A3E81610089770D /* JSONDeserializable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONDeserializable.swift; sourceTree = "<group>"; };
 		4746DA711A3E81610089770D /* Section.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
 		4746DA7B1A3E81CB0089770D /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
+		47AB553C1A3F8FD5006A4955 /* ChapterTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChapterTableViewCell.swift; sourceTree = "<group>"; };
+		47AB553E1A3F99CA006A4955 /* ChapterTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChapterTableViewCell.xib; sourceTree = "<group>"; };
 		47E347A81A3E563400DB8CEA /* gita.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = gita.json; sourceTree = "<group>"; };
 		47E347AB1A3E567C00DB8CEA /* JSONFileReader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONFileReader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -115,11 +119,13 @@
 			isa = PBXGroup;
 			children = (
 				472EBB301A37F0AE00228EB5 /* AppDelegate.swift */,
+				47AB553C1A3F8FD5006A4955 /* ChapterTableViewCell.swift */,
 				472EBB321A37F0AE00228EB5 /* ViewController.swift */,
 				472EBB341A37F0AE00228EB5 /* Main.storyboard */,
 				472EBB371A37F0AE00228EB5 /* Images.xcassets */,
 				472EBB391A37F0AE00228EB5 /* LaunchScreen.xib */,
 				472EBB2E1A37F0AE00228EB5 /* Supporting Files */,
+				47AB553E1A3F99CA006A4955 /* ChapterTableViewCell.xib */,
 			);
 			path = BhagavadGita;
 			sourceTree = "<group>";
@@ -269,6 +275,7 @@
 				472EBB361A37F0AE00228EB5 /* Main.storyboard in Resources */,
 				472EBB3B1A37F0AE00228EB5 /* LaunchScreen.xib in Resources */,
 				47E347A91A3E563400DB8CEA /* gita.json in Resources */,
+				47AB553F1A3F99CA006A4955 /* ChapterTableViewCell.xib in Resources */,
 				472EBB381A37F0AE00228EB5 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -293,6 +300,7 @@
 				4746DA741A3E81610089770D /* Chapter.swift in Sources */,
 				4746DA7C1A3E81CB0089770D /* SwiftyJSON.swift in Sources */,
 				4746DA721A3E81610089770D /* Book.swift in Sources */,
+				47AB553D1A3F8FD5006A4955 /* ChapterTableViewCell.swift in Sources */,
 				4746DA781A3E81610089770D /* Section.swift in Sources */,
 				47E347AC1A3E567C00DB8CEA /* JSONFileReader.swift in Sources */,
 				4746DA761A3E81610089770D /* JSONDeserializable.swift in Sources */,
