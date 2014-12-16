@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		472EBB311A37F0AE00228EB5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472EBB301A37F0AE00228EB5 /* AppDelegate.swift */; };
-		472EBB331A37F0AE00228EB5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472EBB321A37F0AE00228EB5 /* ViewController.swift */; };
 		472EBB361A37F0AE00228EB5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 472EBB341A37F0AE00228EB5 /* Main.storyboard */; };
 		472EBB381A37F0AE00228EB5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 472EBB371A37F0AE00228EB5 /* Images.xcassets */; };
 		472EBB3B1A37F0AE00228EB5 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 472EBB391A37F0AE00228EB5 /* LaunchScreen.xib */; };
@@ -29,6 +28,8 @@
 		47E347AA1A3E563400DB8CEA /* gita.json in Resources */ = {isa = PBXBuildFile; fileRef = 47E347A81A3E563400DB8CEA /* gita.json */; };
 		47E347AC1A3E567C00DB8CEA /* JSONFileReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E347AB1A3E567C00DB8CEA /* JSONFileReader.swift */; };
 		47E347AD1A3E567C00DB8CEA /* JSONFileReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E347AB1A3E567C00DB8CEA /* JSONFileReader.swift */; };
+		47E3624C1A3FB63000AD65C5 /* SectionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E3624B1A3FB63000AD65C5 /* SectionTableViewController.swift */; };
+		47E3624E1A3FB65300AD65C5 /* ChapterTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E3624D1A3FB65300AD65C5 /* ChapterTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,7 +59,6 @@
 		472EBB2B1A37F0AE00228EB5 /* BhagavadGita.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BhagavadGita.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		472EBB2F1A37F0AE00228EB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		472EBB301A37F0AE00228EB5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		472EBB321A37F0AE00228EB5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		472EBB351A37F0AE00228EB5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		472EBB371A37F0AE00228EB5 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		472EBB3A1A37F0AE00228EB5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -74,6 +74,8 @@
 		47AB553E1A3F99CA006A4955 /* ChapterTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChapterTableViewCell.xib; sourceTree = "<group>"; };
 		47E347A81A3E563400DB8CEA /* gita.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = gita.json; sourceTree = "<group>"; };
 		47E347AB1A3E567C00DB8CEA /* JSONFileReader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONFileReader.swift; sourceTree = "<group>"; };
+		47E3624B1A3FB63000AD65C5 /* SectionTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionTableViewController.swift; sourceTree = "<group>"; };
+		47E3624D1A3FB65300AD65C5 /* ChapterTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChapterTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,8 +121,9 @@
 			isa = PBXGroup;
 			children = (
 				472EBB301A37F0AE00228EB5 /* AppDelegate.swift */,
+				47E3624D1A3FB65300AD65C5 /* ChapterTableViewController.swift */,
 				47AB553C1A3F8FD5006A4955 /* ChapterTableViewCell.swift */,
-				472EBB321A37F0AE00228EB5 /* ViewController.swift */,
+				47E3624B1A3FB63000AD65C5 /* SectionTableViewController.swift */,
 				472EBB341A37F0AE00228EB5 /* Main.storyboard */,
 				472EBB371A37F0AE00228EB5 /* Images.xcassets */,
 				47AB553E1A3F99CA006A4955 /* ChapterTableViewCell.xib */,
@@ -295,8 +298,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				472EBB331A37F0AE00228EB5 /* ViewController.swift in Sources */,
+				47E3624C1A3FB63000AD65C5 /* SectionTableViewController.swift in Sources */,
 				472EBB311A37F0AE00228EB5 /* AppDelegate.swift in Sources */,
+				47E3624E1A3FB65300AD65C5 /* ChapterTableViewController.swift in Sources */,
 				4746DA741A3E81610089770D /* Chapter.swift in Sources */,
 				4746DA7C1A3E81CB0089770D /* SwiftyJSON.swift in Sources */,
 				4746DA721A3E81610089770D /* Book.swift in Sources */,
