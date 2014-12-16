@@ -8,14 +8,14 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="80" id="eAM-B6-7uw" customClass="ChapterTableViewCell" customModule="BhagavadGita" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
+            <rect key="frame" x="0.0" y="0.0" width="320" height="85"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eAM-B6-7uw" id="DOK-Lo-FVY">
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aoJ-DL-AzZ">
-                        <rect key="frame" x="8" y="41" width="304" height="29"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                        <rect key="frame" x="8" y="41" width="304" height="34"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="28"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -27,12 +27,12 @@
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="1mt-li-cXK" firstAttribute="trailing" secondItem="DOK-Lo-FVY" secondAttribute="trailingMargin" id="9xI-9V-okT"/>
-                    <constraint firstItem="1mt-li-cXK" firstAttribute="leading" secondItem="DOK-Lo-FVY" secondAttribute="leadingMargin" id="DXp-WE-87R"/>
-                    <constraint firstItem="1mt-li-cXK" firstAttribute="top" secondItem="DOK-Lo-FVY" secondAttribute="topMargin" constant="4" id="UuL-pc-VD1"/>
-                    <constraint firstItem="1mt-li-cXK" firstAttribute="trailing" secondItem="aoJ-DL-AzZ" secondAttribute="trailing" id="jtb-FK-TEz"/>
-                    <constraint firstItem="aoJ-DL-AzZ" firstAttribute="top" secondItem="1mt-li-cXK" secondAttribute="bottom" constant="8" symbolic="YES" id="nwC-wy-mg0"/>
-                    <constraint firstItem="1mt-li-cXK" firstAttribute="leading" secondItem="aoJ-DL-AzZ" secondAttribute="leading" id="wEd-W5-3HB"/>
+                    <constraint firstItem="aoJ-DL-AzZ" firstAttribute="leading" secondItem="DOK-Lo-FVY" secondAttribute="leadingMargin" id="4Vv-Pa-LgX"/>
+                    <constraint firstItem="1mt-li-cXK" firstAttribute="trailing" secondItem="DOK-Lo-FVY" secondAttribute="trailingMargin" id="LAf-G8-7P0"/>
+                    <constraint firstItem="aoJ-DL-AzZ" firstAttribute="top" secondItem="1mt-li-cXK" secondAttribute="bottom" constant="8" symbolic="YES" id="WIu-Mv-UKt"/>
+                    <constraint firstItem="1mt-li-cXK" firstAttribute="leading" secondItem="aoJ-DL-AzZ" secondAttribute="leading" id="WhD-BZ-oMb"/>
+                    <constraint firstItem="aoJ-DL-AzZ" firstAttribute="trailing" secondItem="1mt-li-cXK" secondAttribute="trailing" id="cIx-jG-17t"/>
+                    <constraint firstItem="1mt-li-cXK" firstAttribute="top" secondItem="DOK-Lo-FVY" secondAttribute="topMargin" constant="4" id="jcK-gU-GW2"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>

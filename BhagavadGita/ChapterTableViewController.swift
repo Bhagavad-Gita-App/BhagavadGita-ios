@@ -59,7 +59,7 @@ class ChapterTableViewController: UITableViewController, UITableViewDelegate, UI
     }
 
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 80
+        return indexPath.row == 0 || indexPath.row == 1 ? 80 : 90
     }
     
 }

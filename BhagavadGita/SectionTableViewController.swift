@@ -21,10 +21,6 @@ class SectionTableViewController: UITableViewController, UITableViewDelegate, UI
         self.title = chapter!.title
 
         self.sectionsView.registerClass(UITableViewCell.self, forCellReuseIdentifier: _cellReuseIdentifier)
-
-//        for section in self.chapter!.sections {
-//            println("\(section.slokaCount) -  \(section.content)")
-//        }
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
