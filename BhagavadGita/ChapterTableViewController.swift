@@ -13,7 +13,7 @@ class ChapterTableViewController: UITableViewController, UITableViewDelegate, UI
     @IBOutlet weak var chaptersView: UITableView!
 
     let _cellReuseIdentifier: String = "cell"
-    let _chapterDetailSegueIdentifier: String = "chapterdetail"
+    let _chapterDetailSegueIdentifier: String = "detail"
 
     var _book: Book?
 
@@ -32,11 +32,6 @@ class ChapterTableViewController: UITableViewController, UITableViewDelegate, UI
 
         var chapterCell = UINib(nibName: "ChapterTableViewCell", bundle: nil)
         self.chaptersView.registerNib(chapterCell, forCellReuseIdentifier: _cellReuseIdentifier)
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
