@@ -123,9 +123,9 @@
 				472EBB321A37F0AE00228EB5 /* ViewController.swift */,
 				472EBB341A37F0AE00228EB5 /* Main.storyboard */,
 				472EBB371A37F0AE00228EB5 /* Images.xcassets */,
+				47AB553E1A3F99CA006A4955 /* ChapterTableViewCell.xib */,
 				472EBB391A37F0AE00228EB5 /* LaunchScreen.xib */,
 				472EBB2E1A37F0AE00228EB5 /* Supporting Files */,
-				47AB553E1A3F99CA006A4955 /* ChapterTableViewCell.xib */,
 			);
 			path = BhagavadGita;
 			sourceTree = "<group>";

@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -12,19 +13,27 @@
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eAM-B6-7uw" id="DOK-Lo-FVY">
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aoJ-DL-AzZ">
-                        <rect key="frame" x="8" y="45" width="304" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aoJ-DL-AzZ">
+                        <rect key="frame" x="8" y="41" width="304" height="29"/>
                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="SubTitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1mt-li-cXK">
-                        <rect key="frame" x="8" y="16" width="304" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SubTitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1mt-li-cXK">
+                        <rect key="frame" x="8" y="12" width="304" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
+                <constraints>
+                    <constraint firstItem="1mt-li-cXK" firstAttribute="trailing" secondItem="DOK-Lo-FVY" secondAttribute="trailingMargin" id="9xI-9V-okT"/>
+                    <constraint firstItem="1mt-li-cXK" firstAttribute="leading" secondItem="DOK-Lo-FVY" secondAttribute="leadingMargin" id="DXp-WE-87R"/>
+                    <constraint firstItem="1mt-li-cXK" firstAttribute="top" secondItem="DOK-Lo-FVY" secondAttribute="topMargin" constant="4" id="UuL-pc-VD1"/>
+                    <constraint firstItem="1mt-li-cXK" firstAttribute="trailing" secondItem="aoJ-DL-AzZ" secondAttribute="trailing" id="jtb-FK-TEz"/>
+                    <constraint firstItem="aoJ-DL-AzZ" firstAttribute="top" secondItem="1mt-li-cXK" secondAttribute="bottom" constant="8" symbolic="YES" id="nwC-wy-mg0"/>
+                    <constraint firstItem="1mt-li-cXK" firstAttribute="leading" secondItem="aoJ-DL-AzZ" secondAttribute="leading" id="wEd-W5-3HB"/>
+                </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="subTitle" destination="1mt-li-cXK" id="YxP-4k-bdx"/>
