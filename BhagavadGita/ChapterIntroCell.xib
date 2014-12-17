@@ -2,35 +2,64 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="154" id="RhT-kj-tcE" customClass="ChapterIntroSection" customModule="BhagavadGita" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="154"/>
+        <tableViewCell userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="256" id="RhT-kj-tcE" customClass="ChapterIntroSection" customModule="BhagavadGita" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="256"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" tableViewCell="RhT-kj-tcE" id="8W0-7y-LV4">
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Chapter Intro" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5yt-k5-ffO">
-                        <rect key="frame" x="8" y="10" width="304" height="21"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ChapterDetailIcon" translatesAutoresizingMaskIntoConstraints="NO" id="Rm3-hw-jAa">
+                        <rect key="frame" x="130" y="33" width="60" height="60"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="60" id="ciU-6I-qTh"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Chapter Intro" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5yt-k5-ffO">
+                        <rect key="frame" x="117" y="108" width="86" height="63"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Chapter Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aFM-g0-eGU">
-                        <rect key="frame" x="8" y="41" width="304" height="33"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chapter Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aFM-g0-eGU">
+                        <rect key="frame" x="89" y="181" width="142" height="29"/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="GVb-fj-PpS">
+                        <rect key="frame" x="11" y="220" width="298" height="2"/>
+                        <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="2" id="Svd-5g-zPt"/>
+                        </constraints>
+                    </view>
                 </subviews>
+                <constraints>
+                    <constraint firstItem="Rm3-hw-jAa" firstAttribute="top" secondItem="8W0-7y-LV4" secondAttribute="topMargin" constant="25" id="69K-iB-Xhy"/>
+                    <constraint firstAttribute="centerX" secondItem="5yt-k5-ffO" secondAttribute="centerX" id="DQn-JJ-hAK"/>
+                    <constraint firstItem="GVb-fj-PpS" firstAttribute="leading" secondItem="8W0-7y-LV4" secondAttribute="leadingMargin" constant="3" id="HgJ-NR-c1n"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="GVb-fj-PpS" secondAttribute="bottom" constant="25" id="I4T-U5-Zbh"/>
+                    <constraint firstAttribute="centerX" secondItem="aFM-g0-eGU" secondAttribute="centerX" id="KVC-GL-dxk"/>
+                    <constraint firstItem="GVb-fj-PpS" firstAttribute="top" secondItem="aFM-g0-eGU" secondAttribute="bottom" constant="10" id="Qd7-pd-Vw4"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="GVb-fj-PpS" secondAttribute="trailing" constant="3" id="UFN-Ak-4nR"/>
+                    <constraint firstAttribute="centerX" secondItem="Rm3-hw-jAa" secondAttribute="centerX" id="ceE-Eu-FsP"/>
+                    <constraint firstItem="aFM-g0-eGU" firstAttribute="top" secondItem="5yt-k5-ffO" secondAttribute="bottom" constant="10" id="kxd-AT-jiY"/>
+                    <constraint firstItem="5yt-k5-ffO" firstAttribute="top" secondItem="Rm3-hw-jAa" secondAttribute="bottom" constant="15" id="sVY-E4-uN7"/>
+                </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="introLabel" destination="5yt-k5-ffO" id="v99-ZP-Wxe"/>
                 <outlet property="titleLabel" destination="aFM-g0-eGU" id="bm3-aF-DAu"/>
             </connections>
-            <point key="canvasLocation" x="246" y="96"/>
+            <point key="canvasLocation" x="246" y="146"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="ChapterDetailIcon" width="60" height="60"/>
+    </resources>
 </document>

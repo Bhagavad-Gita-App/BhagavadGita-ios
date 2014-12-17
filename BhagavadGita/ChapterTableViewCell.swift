@@ -11,12 +11,4 @@ import UIKit
 class ChapterTableViewCell: UITableViewCell {
     @IBOutlet weak var title: UILabel?
     @IBOutlet weak var subTitle: UILabel?
-
-    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
-    }
-
-    required init(coder decoder: NSCoder) {
-        super.init(coder: decoder)
-    }
 }
