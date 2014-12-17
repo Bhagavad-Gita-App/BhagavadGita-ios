@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		47195E681A40EAF700C3EF8F /* ChapterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47195E671A40EAF700C3EF8F /* ChapterViewController.swift */; };
+		47195E6D1A410F7500C3EF8F /* ChapterIntroSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47195E6C1A410F7500C3EF8F /* ChapterIntroSection.swift */; };
+		47195E711A41159C00C3EF8F /* ChapterOutroSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47195E701A41159C00C3EF8F /* ChapterOutroSection.swift */; };
+		47195E751A41198D00C3EF8F /* ChapterOutroCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 47195E741A41198D00C3EF8F /* ChapterOutroCell.xib */; };
+		47195E771A411D9000C3EF8F /* ChapterIntroCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 47195E761A411D9000C3EF8F /* ChapterIntroCell.xib */; };
 		472EBB311A37F0AE00228EB5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472EBB301A37F0AE00228EB5 /* AppDelegate.swift */; };
 		472EBB361A37F0AE00228EB5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 472EBB341A37F0AE00228EB5 /* Main.storyboard */; };
 		472EBB381A37F0AE00228EB5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 472EBB371A37F0AE00228EB5 /* Images.xcassets */; };
@@ -28,7 +33,6 @@
 		47E347AA1A3E563400DB8CEA /* gita.json in Resources */ = {isa = PBXBuildFile; fileRef = 47E347A81A3E563400DB8CEA /* gita.json */; };
 		47E347AC1A3E567C00DB8CEA /* JSONFileReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E347AB1A3E567C00DB8CEA /* JSONFileReader.swift */; };
 		47E347AD1A3E567C00DB8CEA /* JSONFileReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E347AB1A3E567C00DB8CEA /* JSONFileReader.swift */; };
-		47E3624C1A3FB63000AD65C5 /* SectionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E3624B1A3FB63000AD65C5 /* SectionTableViewController.swift */; };
 		47E3624E1A3FB65300AD65C5 /* ChapterTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E3624D1A3FB65300AD65C5 /* ChapterTableViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +60,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		47195E671A40EAF700C3EF8F /* ChapterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChapterViewController.swift; sourceTree = "<group>"; };
+		47195E6C1A410F7500C3EF8F /* ChapterIntroSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChapterIntroSection.swift; sourceTree = "<group>"; };
+		47195E701A41159C00C3EF8F /* ChapterOutroSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChapterOutroSection.swift; sourceTree = "<group>"; };
+		47195E741A41198D00C3EF8F /* ChapterOutroCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChapterOutroCell.xib; sourceTree = "<group>"; };
+		47195E761A411D9000C3EF8F /* ChapterIntroCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChapterIntroCell.xib; sourceTree = "<group>"; };
 		472EBB2B1A37F0AE00228EB5 /* BhagavadGita.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BhagavadGita.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		472EBB2F1A37F0AE00228EB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		472EBB301A37F0AE00228EB5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -74,7 +83,6 @@
 		47AB553E1A3F99CA006A4955 /* ChapterTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChapterTableViewCell.xib; sourceTree = "<group>"; };
 		47E347A81A3E563400DB8CEA /* gita.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = gita.json; sourceTree = "<group>"; };
 		47E347AB1A3E567C00DB8CEA /* JSONFileReader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONFileReader.swift; sourceTree = "<group>"; };
-		47E3624B1A3FB63000AD65C5 /* SectionTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionTableViewController.swift; sourceTree = "<group>"; };
 		47E3624D1A3FB65300AD65C5 /* ChapterTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChapterTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -96,6 +104,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		47195E691A410C1900C3EF8F /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				472EBB391A37F0AE00228EB5 /* LaunchScreen.xib */,
+				472EBB341A37F0AE00228EB5 /* Main.storyboard */,
+				47AB553E1A3F99CA006A4955 /* ChapterTableViewCell.xib */,
+				47195E761A411D9000C3EF8F /* ChapterIntroCell.xib */,
+				47195E741A41198D00C3EF8F /* ChapterOutroCell.xib */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
 		472EBB221A37F0AE00228EB5 = {
 			isa = PBXGroup;
 			children = (
@@ -123,11 +143,11 @@
 				472EBB301A37F0AE00228EB5 /* AppDelegate.swift */,
 				47E3624D1A3FB65300AD65C5 /* ChapterTableViewController.swift */,
 				47AB553C1A3F8FD5006A4955 /* ChapterTableViewCell.swift */,
-				47E3624B1A3FB63000AD65C5 /* SectionTableViewController.swift */,
-				472EBB341A37F0AE00228EB5 /* Main.storyboard */,
+				47195E671A40EAF700C3EF8F /* ChapterViewController.swift */,
+				47195E6C1A410F7500C3EF8F /* ChapterIntroSection.swift */,
+				47195E701A41159C00C3EF8F /* ChapterOutroSection.swift */,
+				47195E691A410C1900C3EF8F /* UI */,
 				472EBB371A37F0AE00228EB5 /* Images.xcassets */,
-				47AB553E1A3F99CA006A4955 /* ChapterTableViewCell.xib */,
-				472EBB391A37F0AE00228EB5 /* LaunchScreen.xib */,
 				472EBB2E1A37F0AE00228EB5 /* Supporting Files */,
 			);
 			path = BhagavadGita;
@@ -275,9 +295,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				47195E771A411D9000C3EF8F /* ChapterIntroCell.xib in Resources */,
 				472EBB361A37F0AE00228EB5 /* Main.storyboard in Resources */,
 				472EBB3B1A37F0AE00228EB5 /* LaunchScreen.xib in Resources */,
 				47E347A91A3E563400DB8CEA /* gita.json in Resources */,
+				47195E751A41198D00C3EF8F /* ChapterOutroCell.xib in Resources */,
 				47AB553F1A3F99CA006A4955 /* ChapterTableViewCell.xib in Resources */,
 				472EBB381A37F0AE00228EB5 /* Images.xcassets in Resources */,
 			);
@@ -298,16 +320,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				47E3624C1A3FB63000AD65C5 /* SectionTableViewController.swift in Sources */,
 				472EBB311A37F0AE00228EB5 /* AppDelegate.swift in Sources */,
+				47195E711A41159C00C3EF8F /* ChapterOutroSection.swift in Sources */,
 				47E3624E1A3FB65300AD65C5 /* ChapterTableViewController.swift in Sources */,
 				4746DA741A3E81610089770D /* Chapter.swift in Sources */,
 				4746DA7C1A3E81CB0089770D /* SwiftyJSON.swift in Sources */,
 				4746DA721A3E81610089770D /* Book.swift in Sources */,
 				47AB553D1A3F8FD5006A4955 /* ChapterTableViewCell.swift in Sources */,
+				47195E681A40EAF700C3EF8F /* ChapterViewController.swift in Sources */,
 				4746DA781A3E81610089770D /* Section.swift in Sources */,
 				47E347AC1A3E567C00DB8CEA /* JSONFileReader.swift in Sources */,
 				4746DA761A3E81610089770D /* JSONDeserializable.swift in Sources */,
+				47195E6D1A410F7500C3EF8F /* ChapterIntroSection.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

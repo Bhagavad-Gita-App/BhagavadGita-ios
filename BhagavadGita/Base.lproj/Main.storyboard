@@ -19,7 +19,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="kUo-5U-m9z" kind="show" identifier="detail" id="SLd-mU-cdZ"/>
+                                    <segue destination="IBa-GN-sj6" kind="show" identifier="detail" id="Al2-rh-8wJ"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -38,34 +38,34 @@
             </objects>
             <point key="canvasLocation" x="1964" y="353"/>
         </scene>
-        <!--Section Table View Controller-->
-        <scene sceneID="Bxs-4p-WFI">
+        <!--Chapter View Controller-->
+        <scene sceneID="MeL-8B-A1O">
             <objects>
-                <tableViewController id="kUo-5U-m9z" customClass="SectionTableViewController" customModule="BhagavadGita" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="0ZW-J7-7IL">
+                <tableViewController id="IBa-GN-sj6" customClass="ChapterViewController" customModule="BhagavadGita" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="21b-df-VH8">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Hgu-J8-qMx">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="X1h-gb-Mbr">
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Hgu-J8-qMx" id="i91-q6-egV">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="X1h-gb-Mbr" id="MRe-C3-IpK">
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
                         <connections>
-                            <outlet property="dataSource" destination="kUo-5U-m9z" id="7Xz-BY-RoL"/>
-                            <outlet property="delegate" destination="kUo-5U-m9z" id="0lg-FZ-4Ss"/>
+                            <outlet property="dataSource" destination="IBa-GN-sj6" id="3qo-Ym-aPr"/>
+                            <outlet property="delegate" destination="IBa-GN-sj6" id="ifA-ym-wh5"/>
                         </connections>
                     </tableView>
                     <connections>
-                        <outlet property="sectionsView" destination="0ZW-J7-7IL" id="QSk-eT-6kY"/>
+                        <outlet property="sectionsView" destination="21b-df-VH8" id="p3R-ye-ce8"/>
                     </connections>
                 </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="oky-dV-kAK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="utf-5j-eqP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2710" y="353"/>
+            <point key="canvasLocation" x="2678" y="353"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Xdu-yY-6JR">

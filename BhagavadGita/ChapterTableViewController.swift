@@ -47,7 +47,7 @@ class ChapterTableViewController: UITableViewController, UITableViewDelegate, UI
 
     override func prepareForSegue(segue: (UIStoryboardSegue!), sender: AnyObject?) {
         if segue.identifier == _chapterDetailSegueIdentifier {
-            let viewController: SectionTableViewController = segue.destinationViewController as SectionTableViewController
+            let viewController: ChapterViewController = segue.destinationViewController as ChapterViewController
             if let selectedRowIndexPath = self.chaptersView.indexPathForSelectedRow() {
                 viewController.chapter = book.chapters.filter({ c in c.chapterCount == selectedRowIndexPath.row + 1 }).first
             }
