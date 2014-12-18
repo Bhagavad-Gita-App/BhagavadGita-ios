@@ -11,15 +11,15 @@ import UIKit
 class ChapterViewController: UITableViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var sectionsView: UITableView!
 
-    private let _introCellReuseIdentifier: String = "intro"
+    private let _introCellReuseIdentifier: String = "introcell"
 
-    private let _sectionCellReuseIdentifier: String = "section"
+    private let _sectionCellReuseIdentifier: String = "sectioncell"
 
-    private let _outroCellReuseIdentifier: String = "outro"
+    private let _outroCellReuseIdentifier: String = "outrocell"
 
     var sizingIntroCell: ChapterIntroSection?
 
-    var sizingSectionCell: SectionTableViewCell?
+    var sizingSectionCell: ChapterSectionCell?
 
     var sizingOutroCell: ChapterOutroSection?
 
@@ -33,7 +33,7 @@ class ChapterViewController: UITableViewController, UITableViewDelegate, UITable
         var introCell = UINib(nibName: "ChapterIntroCell", bundle: nil)
         self.sectionsView.registerNib(introCell, forCellReuseIdentifier: _introCellReuseIdentifier)
 
-        var sectionCell = UINib(nibName: "SectionTableViewCell", bundle: nil)
+        var sectionCell = UINib(nibName: "ChapterSectionCell", bundle: nil)
         self.sectionsView.registerNib(sectionCell, forCellReuseIdentifier: _sectionCellReuseIdentifier)
 
         var outroCell = UINib(nibName: "ChapterOutroCell", bundle: nil)
@@ -72,7 +72,7 @@ class ChapterViewController: UITableViewController, UITableViewDelegate, UITable
         default:
             var onceToken: dispatch_once_t = 0
             dispatch_once(&onceToken) {
-                self.sizingSectionCell = self.sectionsView.dequeueReusableCellWithIdentifier(self._sectionCellReuseIdentifier) as? SectionTableViewCell
+                self.sizingSectionCell = self.sectionsView.dequeueReusableCellWithIdentifier(self._sectionCellReuseIdentifier) as? ChapterSectionCell
             }
             sizingSectionCell = configureSectionCell(sizingSectionCell, forRowAtIndexPath: indexPath)
             sizingSectionCell?.layoutIfNeeded()
@@ -104,7 +104,7 @@ class ChapterViewController: UITableViewController, UITableViewDelegate, UITable
             var cell: ChapterOutroSection = self.sectionsView.dequeueReusableCellWithIdentifier(_outroCellReuseIdentifier) as ChapterOutroSection
             return configureOutroCell(cell, forRowAtIndexPath: indexPath)!
         default:    // Sections
-            var cell: SectionTableViewCell = self.sectionsView.dequeueReusableCellWithIdentifier(_sectionCellReuseIdentifier) as SectionTableViewCell
+            var cell: ChapterSectionCell = self.sectionsView.dequeueReusableCellWithIdentifier(_sectionCellReuseIdentifier) as ChapterSectionCell
             return configureSectionCell(cell, forRowAtIndexPath: indexPath)!
         }
         
@@ -120,7 +120,7 @@ class ChapterViewController: UITableViewController, UITableViewDelegate, UITable
         return cell
     }
 
-    func configureSectionCell(cell: SectionTableViewCell?, forRowAtIndexPath indexPath: NSIndexPath) -> SectionTableViewCell? {
+    func configureSectionCell(cell: ChapterSectionCell?, forRowAtIndexPath indexPath: NSIndexPath) -> ChapterSectionCell? {
         var section = chapter!.sections[indexPath.row]
         cell?.speakerLabel?.text = section.speaker
         cell?.speakerLabel.font = UIFont.boldSystemFontOfSize(17.0)

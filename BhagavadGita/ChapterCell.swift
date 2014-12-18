@@ -1,5 +1,5 @@
 //
-//  ChapterTableViewCell.swift
+//  ChapterCell.swift
 //  BhagavadGita
 //
 //  Created by Hari on 12/15/14.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ChapterTableViewCell: UITableViewCell {
+class ChapterCell: UITableViewCell {
     @IBOutlet weak var title: UILabel?
     @IBOutlet weak var subTitle: UILabel?
 }

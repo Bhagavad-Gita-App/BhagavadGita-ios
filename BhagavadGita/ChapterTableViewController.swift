@@ -12,7 +12,7 @@ class ChapterTableViewController: UITableViewController, UITableViewDelegate, UI
 
     @IBOutlet weak var chaptersView: UITableView!
 
-    let _cellReuseIdentifier: String = "cell"
+    let _cellReuseIdentifier: String = "chaptercell"
     let _chapterDetailSegueIdentifier: String = "detail"
 
     var _book: Book?
@@ -30,7 +30,7 @@ class ChapterTableViewController: UITableViewController, UITableViewDelegate, UI
 
         self.title = book.bookTitle
 
-        var chapterCell = UINib(nibName: "ChapterTableViewCell", bundle: nil)
+        var chapterCell = UINib(nibName: "ChapterCell", bundle: nil)
         self.chaptersView.registerNib(chapterCell, forCellReuseIdentifier: _cellReuseIdentifier)
     }
 
@@ -39,7 +39,7 @@ class ChapterTableViewController: UITableViewController, UITableViewDelegate, UI
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell: ChapterTableViewCell = self.chaptersView.dequeueReusableCellWithIdentifier(_cellReuseIdentifier) as ChapterTableViewCell
+        var cell: ChapterCell = self.chaptersView.dequeueReusableCellWithIdentifier(_cellReuseIdentifier) as ChapterCell
         cell.title?.text = self.book.chapters[indexPath.row].title
         cell.subTitle?.text = self.book.chapters[indexPath.row].subTitle
         return cell
