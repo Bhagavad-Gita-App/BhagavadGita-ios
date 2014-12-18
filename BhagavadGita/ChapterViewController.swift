@@ -9,6 +9,7 @@
 import UIKit
 
 class ChapterViewController: UITableViewController, UITableViewDelegate, UITableViewDataSource {
+
     @IBOutlet weak var sectionsView: UITableView!
 
     private let _introCellReuseIdentifier: String = "introcell"
@@ -17,11 +18,13 @@ class ChapterViewController: UITableViewController, UITableViewDelegate, UITable
 
     private let _outroCellReuseIdentifier: String = "outrocell"
 
-    var sizingIntroCell: ChapterIntroSection?
+    struct Static {
+        static var sizingIntroCell: ChapterIntroSection?
 
-    var sizingSectionCell: ChapterSectionCell?
+        static var sizingSectionCell: ChapterSectionCell?
 
-    var sizingOutroCell: ChapterOutroSection?
+        static var sizingOutroCell: ChapterOutroSection?
+    }
 
     var chapter: Chapter?
 
@@ -47,67 +50,73 @@ class ChapterViewController: UITableViewController, UITableViewDelegate, UITable
     }
 
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        // TODO: Needs some heavy refactoring below
         switch indexPath.section {
-        case 0:
-            var onceToken: dispatch_once_t = 0
-            dispatch_once(&onceToken, {
-                self.sizingIntroCell = self.sectionsView.dequeueReusableCellWithIdentifier(self._introCellReuseIdentifier) as? ChapterIntroSection
-            })
-            sizingIntroCell = configureIntroCell(sizingIntroCell, forRowAtIndexPath: indexPath)
-            sizingIntroCell?.layoutIfNeeded()
-
-            let size: CGSize = sizingIntroCell!.contentView.systemLayoutSizeFittingSize(UILayoutFittingCompressedSize)
-            return size.height + 1
-        case 2:
-            var onceToken: dispatch_once_t = 0
-            dispatch_once(&onceToken, {
-                self.sizingOutroCell = self.sectionsView.dequeueReusableCellWithIdentifier(self._outroCellReuseIdentifier) as? ChapterOutroSection
-            })
-            sizingOutroCell = configureOutroCell(sizingOutroCell, forRowAtIndexPath: indexPath)
-            sizingOutroCell?.layoutIfNeeded()
-
-            let size: CGSize = sizingOutroCell!.contentView.systemLayoutSizeFittingSize(UILayoutFittingCompressedSize)
-            return size.height + 1
-        default:
-            var onceToken: dispatch_once_t = 0
-            dispatch_once(&onceToken) {
-                self.sizingSectionCell = self.sectionsView.dequeueReusableCellWithIdentifier(self._sectionCellReuseIdentifier) as? ChapterSectionCell
+        case 0: // intro
+            if Static.sizingIntroCell == nil {
+                Static.sizingIntroCell = sectionsView.dequeueReusableCellWithIdentifier(_introCellReuseIdentifier) as? ChapterIntroSection
             }
-            sizingSectionCell = configureSectionCell(sizingSectionCell, forRowAtIndexPath: indexPath)
-            sizingSectionCell?.layoutIfNeeded()
+            Static.sizingIntroCell = configureIntroCell(Static.sizingIntroCell, forRowAtIndexPath: indexPath)
+            Static.sizingIntroCell?.layoutIfNeeded()
 
-            let size: CGSize = sizingSectionCell!.contentView.systemLayoutSizeFittingSize(UILayoutFittingCompressedSize)
+            let size: CGSize = Static.sizingIntroCell!.contentView.systemLayoutSizeFittingSize(UILayoutFittingCompressedSize)
             return size.height + 1
+
+        case 1: // sections
+            if Static.sizingSectionCell == nil {
+                Static.sizingSectionCell = sectionsView.dequeueReusableCellWithIdentifier(_sectionCellReuseIdentifier) as? ChapterSectionCell
+            }
+            Static.sizingSectionCell = configureSectionCell(Static.sizingSectionCell, forRowAtIndexPath: indexPath)
+            Static.sizingSectionCell?.layoutIfNeeded()
+
+            let size: CGSize = Static.sizingSectionCell!.contentView.systemLayoutSizeFittingSize(UILayoutFittingCompressedSize)
+            return size.height + 1
+
+        default:    // outro (and anything else)
+            if Static.sizingOutroCell == nil {
+                Static.sizingOutroCell = sectionsView.dequeueReusableCellWithIdentifier(_outroCellReuseIdentifier) as? ChapterOutroSection
+            }
+            Static.sizingOutroCell = configureOutroCell(Static.sizingOutroCell, forRowAtIndexPath: indexPath)
+            Static.sizingOutroCell?.layoutIfNeeded()
+
+            let size: CGSize = Static.sizingOutroCell!.contentView.systemLayoutSizeFittingSize(UILayoutFittingCompressedSize)
+            return size.height + 1
+
         }
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
+
         case 0: // intro
             return 1
+
         case 1: // sections
             return chapter!.sections.count
-        case 2: // outro
+
+        default: // outro (and anything else)
             return chapter!.outro!.isEmpty ? 0 : 1
-        default:
-            return 0
+
         }
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+
         switch indexPath.section {
+
         case 0: // Intro
             var cell: ChapterIntroSection = self.sectionsView.dequeueReusableCellWithIdentifier(_introCellReuseIdentifier) as ChapterIntroSection
             return configureIntroCell(cell, forRowAtIndexPath: indexPath)!
-        case 2: // Outro
-            var cell: ChapterOutroSection = self.sectionsView.dequeueReusableCellWithIdentifier(_outroCellReuseIdentifier) as ChapterOutroSection
-            return configureOutroCell(cell, forRowAtIndexPath: indexPath)!
-        default:    // Sections
+
+        case 1: // Sections
             var cell: ChapterSectionCell = self.sectionsView.dequeueReusableCellWithIdentifier(_sectionCellReuseIdentifier) as ChapterSectionCell
             return configureSectionCell(cell, forRowAtIndexPath: indexPath)!
+
+        default:    // Outro (and anything else)
+            var cell: ChapterOutroSection = self.sectionsView.dequeueReusableCellWithIdentifier(_outroCellReuseIdentifier) as ChapterOutroSection
+            return configureOutroCell(cell, forRowAtIndexPath: indexPath)!
+
         }
-        
+
     }
 
     func configureIntroCell(cell: ChapterIntroSection?, forRowAtIndexPath: NSIndexPath) -> ChapterIntroSection? {
@@ -140,6 +149,4 @@ class ChapterViewController: UITableViewController, UITableViewDelegate, UITable
 
         return cell
     }
-    
-
 }
