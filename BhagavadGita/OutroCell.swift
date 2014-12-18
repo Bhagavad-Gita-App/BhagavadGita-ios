@@ -1,5 +1,5 @@
 //
-//  ChapterOutroSection.swift
+//  OutroCell.swift
 //  BhagavadGita
 //
 //  Created by Hari on 12/16/14.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ChapterOutroSection: UITableViewCell {
+class OutroCell: UITableViewCell {
 
     @IBOutlet weak var outroLabel: UILabel!
     

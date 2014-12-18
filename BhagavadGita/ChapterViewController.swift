@@ -19,11 +19,11 @@ class ChapterViewController: UITableViewController, UITableViewDelegate, UITable
     private let _outroCellReuseIdentifier: String = "outrocell"
 
     struct Static {
-        static var sizingIntroCell: ChapterIntroSection?
+        static var sizingIntroCell: IntroCell?
 
-        static var sizingSectionCell: ChapterSectionCell?
+        static var sizingSectionCell: SectionCell?
 
-        static var sizingOutroCell: ChapterOutroSection?
+        static var sizingOutroCell: OutroCell?
     }
 
     var chapter: Chapter?
@@ -33,13 +33,13 @@ class ChapterViewController: UITableViewController, UITableViewDelegate, UITable
 
         self.title = chapter!.title
 
-        var introCell = UINib(nibName: "ChapterIntroCell", bundle: nil)
+        var introCell = UINib(nibName: "IntroCell", bundle: nil)
         self.sectionsView.registerNib(introCell, forCellReuseIdentifier: _introCellReuseIdentifier)
 
-        var sectionCell = UINib(nibName: "ChapterSectionCell", bundle: nil)
+        var sectionCell = UINib(nibName: "SectionCell", bundle: nil)
         self.sectionsView.registerNib(sectionCell, forCellReuseIdentifier: _sectionCellReuseIdentifier)
 
-        var outroCell = UINib(nibName: "ChapterOutroCell", bundle: nil)
+        var outroCell = UINib(nibName: "OutroCell", bundle: nil)
         self.sectionsView.registerNib(outroCell, forCellReuseIdentifier: _outroCellReuseIdentifier)
 
     }
@@ -53,7 +53,7 @@ class ChapterViewController: UITableViewController, UITableViewDelegate, UITable
         switch indexPath.section {
         case 0: // intro
             if Static.sizingIntroCell == nil {
-                Static.sizingIntroCell = sectionsView.dequeueReusableCellWithIdentifier(_introCellReuseIdentifier) as? ChapterIntroSection
+                Static.sizingIntroCell = sectionsView.dequeueReusableCellWithIdentifier(_introCellReuseIdentifier) as? IntroCell
             }
             Static.sizingIntroCell = configureIntroCell(Static.sizingIntroCell, forRowAtIndexPath: indexPath)
             Static.sizingIntroCell?.layoutIfNeeded()
@@ -63,7 +63,7 @@ class ChapterViewController: UITableViewController, UITableViewDelegate, UITable
 
         case 1: // sections
             if Static.sizingSectionCell == nil {
-                Static.sizingSectionCell = sectionsView.dequeueReusableCellWithIdentifier(_sectionCellReuseIdentifier) as? ChapterSectionCell
+                Static.sizingSectionCell = sectionsView.dequeueReusableCellWithIdentifier(_sectionCellReuseIdentifier) as? SectionCell
             }
             Static.sizingSectionCell = configureSectionCell(Static.sizingSectionCell, forRowAtIndexPath: indexPath)
             Static.sizingSectionCell?.layoutIfNeeded()
@@ -73,7 +73,7 @@ class ChapterViewController: UITableViewController, UITableViewDelegate, UITable
 
         default:    // outro (and anything else)
             if Static.sizingOutroCell == nil {
-                Static.sizingOutroCell = sectionsView.dequeueReusableCellWithIdentifier(_outroCellReuseIdentifier) as? ChapterOutroSection
+                Static.sizingOutroCell = sectionsView.dequeueReusableCellWithIdentifier(_outroCellReuseIdentifier) as? OutroCell
             }
             Static.sizingOutroCell = configureOutroCell(Static.sizingOutroCell, forRowAtIndexPath: indexPath)
             Static.sizingOutroCell?.layoutIfNeeded()
@@ -104,22 +104,22 @@ class ChapterViewController: UITableViewController, UITableViewDelegate, UITable
         switch indexPath.section {
 
         case 0: // Intro
-            var cell: ChapterIntroSection = self.sectionsView.dequeueReusableCellWithIdentifier(_introCellReuseIdentifier) as ChapterIntroSection
+            var cell: IntroCell = self.sectionsView.dequeueReusableCellWithIdentifier(_introCellReuseIdentifier) as IntroCell
             return configureIntroCell(cell, forRowAtIndexPath: indexPath)!
 
         case 1: // Sections
-            var cell: ChapterSectionCell = self.sectionsView.dequeueReusableCellWithIdentifier(_sectionCellReuseIdentifier) as ChapterSectionCell
+            var cell: SectionCell = self.sectionsView.dequeueReusableCellWithIdentifier(_sectionCellReuseIdentifier) as SectionCell
             return configureSectionCell(cell, forRowAtIndexPath: indexPath)!
 
         default:    // Outro (and anything else)
-            var cell: ChapterOutroSection = self.sectionsView.dequeueReusableCellWithIdentifier(_outroCellReuseIdentifier) as ChapterOutroSection
+            var cell: OutroCell = self.sectionsView.dequeueReusableCellWithIdentifier(_outroCellReuseIdentifier) as OutroCell
             return configureOutroCell(cell, forRowAtIndexPath: indexPath)!
 
         }
 
     }
 
-    func configureIntroCell(cell: ChapterIntroSection?, forRowAtIndexPath: NSIndexPath) -> ChapterIntroSection? {
+    func configureIntroCell(cell: IntroCell?, forRowAtIndexPath: NSIndexPath) -> IntroCell? {
         cell?.introLabel.text = chapter?.intro
         cell?.introLabel.font = UIFont.systemFontOfSize(14.0)
 
@@ -129,7 +129,7 @@ class ChapterViewController: UITableViewController, UITableViewDelegate, UITable
         return cell
     }
 
-    func configureSectionCell(cell: ChapterSectionCell?, forRowAtIndexPath indexPath: NSIndexPath) -> ChapterSectionCell? {
+    func configureSectionCell(cell: SectionCell?, forRowAtIndexPath indexPath: NSIndexPath) -> SectionCell? {
         var section = chapter!.sections[indexPath.row]
         cell?.speakerLabel?.text = section.speaker
         cell?.speakerLabel.font = UIFont.boldSystemFontOfSize(17.0)
@@ -143,7 +143,7 @@ class ChapterViewController: UITableViewController, UITableViewDelegate, UITable
         return cell
     }
     
-    func configureOutroCell(cell: ChapterOutroSection?, forRowAtIndexPath indexPath: NSIndexPath) -> ChapterOutroSection? {
+    func configureOutroCell(cell: OutroCell?, forRowAtIndexPath indexPath: NSIndexPath) -> OutroCell? {
         cell?.outroLabel.text = chapter?.outro
         cell?.outroLabel.font = UIFont.systemFontOfSize(14.0)
 

@@ -1,5 +1,5 @@
 //
-//  ChapterTableViewController.swift
+//  BookViewController.swift
 //  BhagavadGita
 //
 //  Created by Hari on 12/9/14.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ChapterTableViewController: UITableViewController, UITableViewDelegate, UITableViewDataSource {
+class BookViewController: UITableViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var chaptersView: UITableView!
 

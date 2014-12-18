@@ -1,5 +1,5 @@
 //
-//  ChapterIntroSection.swift
+//  IntroCell.swift
 //  BhagavadGita
 //
 //  Created by Hari on 12/16/14.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ChapterIntroSection: UITableViewCell {
+class IntroCell: UITableViewCell {
     @IBOutlet weak var introLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
     

@@ -1,5 +1,5 @@
 //
-//  ChapterSectionCell.swift
+//  SectionCell.swift
 //  BhagavadGita
 //
 //  Created by Hari on 12/16/14.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ChapterSectionCell: UITableViewCell {
+class SectionCell: UITableViewCell {
     @IBOutlet weak var speakerLabel: UILabel!
     @IBOutlet weak var contentLabel: UILabel!
     @IBOutlet weak var meaningLabel: UILabel!
