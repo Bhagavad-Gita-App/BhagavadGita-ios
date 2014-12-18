@@ -9,6 +9,7 @@
 import UIKit
 
 class IntroCell: UITableViewCell {
+    
     @IBOutlet weak var introLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
     

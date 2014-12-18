@@ -30,6 +30,8 @@ class BookViewController: UITableViewController, UITableViewDelegate, UITableVie
 
         self.title = book.bookTitle
 
+        self.chaptersView.scrollsToTop = true
+
         var chapterCell = UINib(nibName: "ChapterCell", bundle: nil)
         self.chaptersView.registerNib(chapterCell, forCellReuseIdentifier: _cellReuseIdentifier)
     }

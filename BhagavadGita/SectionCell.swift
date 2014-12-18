@@ -9,7 +9,9 @@
 import UIKit
 
 class SectionCell: UITableViewCell {
+
     @IBOutlet weak var speakerLabel: UILabel!
     @IBOutlet weak var contentLabel: UILabel!
     @IBOutlet weak var meaningLabel: UILabel!
+
 }

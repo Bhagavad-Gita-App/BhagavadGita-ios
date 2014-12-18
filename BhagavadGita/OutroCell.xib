@@ -14,22 +14,17 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chapter Outro" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ukU-IK-Rz0">
-                        <rect key="frame" x="8" y="8" width="304" height="120"/>
-                        <constraints>
-                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="120" id="yGm-dL-WTi"/>
-                        </constraints>
+                        <rect key="frame" x="18" y="48" width="304" height="47"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="ukU-IK-Rz0" firstAttribute="leading" secondItem="OjQ-oE-k2R" secondAttribute="leadingMargin" id="Axw-Pe-FIE"/>
-                    <constraint firstAttribute="centerX" secondItem="ukU-IK-Rz0" secondAttribute="centerX" id="DhM-TG-ozj"/>
-                    <constraint firstAttribute="centerY" secondItem="ukU-IK-Rz0" secondAttribute="centerY" constant="3.5" id="JkV-je-Y9Q"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="ukU-IK-Rz0" secondAttribute="bottom" constant="7" id="Kxe-4o-V0e"/>
-                    <constraint firstItem="ukU-IK-Rz0" firstAttribute="top" secondItem="OjQ-oE-k2R" secondAttribute="topMargin" id="UN8-gQ-tZA"/>
-                    <constraint firstItem="ukU-IK-Rz0" firstAttribute="trailing" secondItem="OjQ-oE-k2R" secondAttribute="trailingMargin" id="eV1-Nz-Jpe"/>
+                    <constraint firstItem="ukU-IK-Rz0" firstAttribute="trailing" secondItem="OjQ-oE-k2R" secondAttribute="trailingMargin" constant="10" id="aMO-eS-zRj"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="ukU-IK-Rz0" secondAttribute="bottom" constant="40" id="axc-F6-Ude"/>
+                    <constraint firstItem="ukU-IK-Rz0" firstAttribute="leading" secondItem="OjQ-oE-k2R" secondAttribute="leadingMargin" constant="10" id="udj-10-Py6"/>
+                    <constraint firstItem="ukU-IK-Rz0" firstAttribute="top" secondItem="OjQ-oE-k2R" secondAttribute="topMargin" constant="40" id="zXz-d1-wsU"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>

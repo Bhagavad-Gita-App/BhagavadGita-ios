@@ -33,6 +33,10 @@ class ChapterViewController: UITableViewController, UITableViewDelegate, UITable
 
         self.title = chapter!.title
 
+        self.sectionsView.rowHeight = UITableViewAutomaticDimension
+        self.sectionsView.estimatedRowHeight = 600
+        self.sectionsView.scrollsToTop = true
+
         var introCell = UINib(nibName: "IntroCell", bundle: nil)
         self.sectionsView.registerNib(introCell, forCellReuseIdentifier: _introCellReuseIdentifier)
 
@@ -49,40 +53,40 @@ class ChapterViewController: UITableViewController, UITableViewDelegate, UITable
         return chapter!.outro!.isEmpty ? 2 : 3
     }
 
-    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        switch indexPath.section {
-        case 0: // intro
-            if Static.sizingIntroCell == nil {
-                Static.sizingIntroCell = sectionsView.dequeueReusableCellWithIdentifier(_introCellReuseIdentifier) as? IntroCell
-            }
-            Static.sizingIntroCell = configureIntroCell(Static.sizingIntroCell, forRowAtIndexPath: indexPath)
-            Static.sizingIntroCell?.layoutIfNeeded()
-
-            let size: CGSize = Static.sizingIntroCell!.contentView.systemLayoutSizeFittingSize(UILayoutFittingCompressedSize)
-            return size.height + 1
-
-        case 1: // sections
-            if Static.sizingSectionCell == nil {
-                Static.sizingSectionCell = sectionsView.dequeueReusableCellWithIdentifier(_sectionCellReuseIdentifier) as? SectionCell
-            }
-            Static.sizingSectionCell = configureSectionCell(Static.sizingSectionCell, forRowAtIndexPath: indexPath)
-            Static.sizingSectionCell?.layoutIfNeeded()
-
-            let size: CGSize = Static.sizingSectionCell!.contentView.systemLayoutSizeFittingSize(UILayoutFittingCompressedSize)
-            return size.height + 1
-
-        default:    // outro (and anything else)
-            if Static.sizingOutroCell == nil {
-                Static.sizingOutroCell = sectionsView.dequeueReusableCellWithIdentifier(_outroCellReuseIdentifier) as? OutroCell
-            }
-            Static.sizingOutroCell = configureOutroCell(Static.sizingOutroCell, forRowAtIndexPath: indexPath)
-            Static.sizingOutroCell?.layoutIfNeeded()
-
-            let size: CGSize = Static.sizingOutroCell!.contentView.systemLayoutSizeFittingSize(UILayoutFittingCompressedSize)
-            return size.height + 1
-
-        }
-    }
+    //    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    //        switch indexPath.section {
+    //        case 0: // intro
+    //            if Static.sizingIntroCell == nil {
+    //                Static.sizingIntroCell = sectionsView.dequeueReusableCellWithIdentifier(_introCellReuseIdentifier) as? IntroCell
+    //            }
+    //            Static.sizingIntroCell = configureIntroCell(Static.sizingIntroCell, forRowAtIndexPath: indexPath)
+    //            Static.sizingIntroCell?.layoutIfNeeded()
+    //
+    //            let size: CGSize = Static.sizingIntroCell!.contentView.systemLayoutSizeFittingSize(UILayoutFittingCompressedSize)
+    //            return size.height + 1
+    //
+    //        case 1: // sections
+    //            if Static.sizingSectionCell == nil {
+    //                Static.sizingSectionCell = sectionsView.dequeueReusableCellWithIdentifier(_sectionCellReuseIdentifier) as? SectionCell
+    //            }
+    //            Static.sizingSectionCell = configureSectionCell(Static.sizingSectionCell, forRowAtIndexPath: indexPath)
+    //            Static.sizingSectionCell?.layoutIfNeeded()
+    //
+    //            let size: CGSize = Static.sizingSectionCell!.contentView.systemLayoutSizeFittingSize(UILayoutFittingCompressedSize)
+    //            return size.height + 1
+    //
+    //        default:    // outro (and anything else)
+    //            if Static.sizingOutroCell == nil {
+    //                Static.sizingOutroCell = sectionsView.dequeueReusableCellWithIdentifier(_outroCellReuseIdentifier) as? OutroCell
+    //            }
+    //            Static.sizingOutroCell = configureOutroCell(Static.sizingOutroCell, forRowAtIndexPath: indexPath)
+    //            Static.sizingOutroCell?.layoutIfNeeded()
+    //
+    //            let size: CGSize = Static.sizingOutroCell!.contentView.systemLayoutSizeFittingSize(UILayoutFittingCompressedSize)
+    //            return size.height + 1
+    //
+    //        }
+    //    }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
@@ -124,7 +128,7 @@ class ChapterViewController: UITableViewController, UITableViewDelegate, UITable
         cell?.introLabel.font = UIFont.systemFontOfSize(14.0)
 
         cell?.titleLabel.text = chapter?.title
-        cell?.titleLabel.font = UIFont.boldSystemFontOfSize(24.0)
+        cell?.titleLabel.font = UIFont.boldSystemFontOfSize(22.0)
 
         return cell
     }
@@ -132,21 +136,21 @@ class ChapterViewController: UITableViewController, UITableViewDelegate, UITable
     func configureSectionCell(cell: SectionCell?, forRowAtIndexPath indexPath: NSIndexPath) -> SectionCell? {
         var section = chapter!.sections[indexPath.row]
         cell?.speakerLabel?.text = section.speaker
-        cell?.speakerLabel.font = UIFont.boldSystemFontOfSize(17.0)
+        cell?.speakerLabel.font = UIFont.boldSystemFontOfSize(14.0)
 
         cell?.contentLabel.text = section.content
-        cell?.contentLabel.font = UIFont.boldSystemFontOfSize(24.0)
+        cell?.contentLabel.font = UIFont.boldSystemFontOfSize(18.0)
 
         cell?.meaningLabel.text = section.meaning
-        cell?.meaningLabel.font = UIFont.systemFontOfSize(22.0)
-
+        cell?.meaningLabel.font = UIFont.systemFontOfSize(18.0)
+        
         return cell
     }
     
     func configureOutroCell(cell: OutroCell?, forRowAtIndexPath indexPath: NSIndexPath) -> OutroCell? {
         cell?.outroLabel.text = chapter?.outro
         cell?.outroLabel.font = UIFont.systemFontOfSize(14.0)
-
+        
         return cell
     }
 }

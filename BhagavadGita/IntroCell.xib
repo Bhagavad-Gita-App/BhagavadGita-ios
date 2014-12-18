@@ -14,25 +14,25 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ChapterDetailIcon" translatesAutoresizingMaskIntoConstraints="NO" id="Rm3-hw-jAa">
-                        <rect key="frame" x="130" y="33" width="60" height="60"/>
+                        <rect key="frame" x="130" y="13" width="60" height="60"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="60" id="ciU-6I-qTh"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Chapter Intro" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5yt-k5-ffO">
-                        <rect key="frame" x="117" y="108" width="86" height="63"/>
+                        <rect key="frame" x="117" y="88" width="86" height="103"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chapter Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aFM-g0-eGU">
-                        <rect key="frame" x="89" y="181" width="142" height="29"/>
+                        <rect key="frame" x="89" y="201" width="142" height="29"/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="GVb-fj-PpS">
-                        <rect key="frame" x="11" y="220" width="298" height="2"/>
+                        <rect key="frame" x="11" y="240" width="298" height="2"/>
                         <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="2" id="Svd-5g-zPt"/>
@@ -40,10 +40,10 @@
                     </view>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="Rm3-hw-jAa" firstAttribute="top" secondItem="8W0-7y-LV4" secondAttribute="topMargin" constant="25" id="69K-iB-Xhy"/>
+                    <constraint firstItem="Rm3-hw-jAa" firstAttribute="top" secondItem="8W0-7y-LV4" secondAttribute="topMargin" constant="5" id="69K-iB-Xhy"/>
                     <constraint firstAttribute="centerX" secondItem="5yt-k5-ffO" secondAttribute="centerX" id="DQn-JJ-hAK"/>
                     <constraint firstItem="GVb-fj-PpS" firstAttribute="leading" secondItem="8W0-7y-LV4" secondAttribute="leadingMargin" constant="3" id="HgJ-NR-c1n"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="GVb-fj-PpS" secondAttribute="bottom" constant="25" id="I4T-U5-Zbh"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="GVb-fj-PpS" secondAttribute="bottom" constant="5" id="I4T-U5-Zbh"/>
                     <constraint firstAttribute="centerX" secondItem="aFM-g0-eGU" secondAttribute="centerX" id="KVC-GL-dxk"/>
                     <constraint firstItem="GVb-fj-PpS" firstAttribute="top" secondItem="aFM-g0-eGU" secondAttribute="bottom" constant="10" id="Qd7-pd-Vw4"/>
                     <constraint firstAttribute="trailingMargin" secondItem="GVb-fj-PpS" secondAttribute="trailing" constant="3" id="UFN-Ak-4nR"/>

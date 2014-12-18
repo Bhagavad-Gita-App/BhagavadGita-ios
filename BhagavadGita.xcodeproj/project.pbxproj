@@ -111,8 +111,12 @@
 		47195E691A410C1900C3EF8F /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				472EBB391A37F0AE00228EB5 /* LaunchScreen.xib */,
+				47AB553C1A3F8FD5006A4955 /* ChapterCell.swift */,
+				47195E6C1A410F7500C3EF8F /* IntroCell.swift */,
+				47195E701A41159C00C3EF8F /* OutroCell.swift */,
+				478384851A4124DC0064DB7A /* SectionCell.swift */,
 				472EBB341A37F0AE00228EB5 /* Main.storyboard */,
+				472EBB391A37F0AE00228EB5 /* LaunchScreen.xib */,
 				47AB553E1A3F99CA006A4955 /* ChapterCell.xib */,
 				47195E761A411D9000C3EF8F /* IntroCell.xib */,
 				47195E741A41198D00C3EF8F /* OutroCell.xib */,
@@ -145,13 +149,8 @@
 		472EBB2D1A37F0AE00228EB5 /* BhagavadGita */ = {
 			isa = PBXGroup;
 			children = (
-				472EBB301A37F0AE00228EB5 /* AppDelegate.swift */,
 				47E3624D1A3FB65300AD65C5 /* BookViewController.swift */,
-				47AB553C1A3F8FD5006A4955 /* ChapterCell.swift */,
 				47195E671A40EAF700C3EF8F /* ChapterViewController.swift */,
-				47195E6C1A410F7500C3EF8F /* IntroCell.swift */,
-				47195E701A41159C00C3EF8F /* OutroCell.swift */,
-				478384851A4124DC0064DB7A /* SectionCell.swift */,
 				47195E691A410C1900C3EF8F /* UI */,
 				472EBB371A37F0AE00228EB5 /* Images.xcassets */,
 				472EBB2E1A37F0AE00228EB5 /* Supporting Files */,
@@ -162,6 +161,7 @@
 		472EBB2E1A37F0AE00228EB5 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				472EBB301A37F0AE00228EB5 /* AppDelegate.swift */,
 				472EBB2F1A37F0AE00228EB5 /* Info.plist */,
 			);
 			name = "Supporting Files";
