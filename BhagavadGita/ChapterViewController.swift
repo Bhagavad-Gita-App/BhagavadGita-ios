@@ -42,7 +42,8 @@ class ChapterViewController: UITableViewController, UITableViewDelegate, UITable
     }
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 3
+        // if we have outro, total sections will be three, otherwise 2
+        return chapter!.outro!.isEmpty ? 2 : 3
     }
 
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
@@ -82,7 +83,16 @@ class ChapterViewController: UITableViewController, UITableViewDelegate, UITable
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return section == 0 || section == 2 ? 1 : chapter!.sections.count
+        switch section {
+        case 0: // intro
+            return 1
+        case 1: // sections
+            return chapter!.sections.count
+        case 2: // outro
+            return chapter!.outro!.isEmpty ? 0 : 1
+        default:
+            return 0
+        }
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
