@@ -33,8 +33,8 @@ class ChapterViewController: UITableViewController, UITableViewDelegate, UITable
 
         self.title = chapter!.title
 
+        //self.sectionsView.estimatedRowHeight = 600
         self.sectionsView.rowHeight = UITableViewAutomaticDimension
-        self.sectionsView.estimatedRowHeight = 600
 
         var introCell = UINib(nibName: "IntroCell", bundle: nil)
         self.sectionsView.registerNib(introCell, forCellReuseIdentifier: _introCellReuseIdentifier)
