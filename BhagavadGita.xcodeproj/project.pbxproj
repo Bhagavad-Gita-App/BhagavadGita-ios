@@ -18,6 +18,7 @@
 		472EBB381A37F0AE00228EB5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 472EBB371A37F0AE00228EB5 /* Images.xcassets */; };
 		472EBB3B1A37F0AE00228EB5 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 472EBB391A37F0AE00228EB5 /* LaunchScreen.xib */; };
 		472EBB471A37F0AE00228EB5 /* BhagavadGitaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472EBB461A37F0AE00228EB5 /* BhagavadGitaTests.swift */; };
+		473362FF1A520D300031A744 /* SectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473362FE1A520D300031A744 /* SectionViewController.swift */; };
 		4746DA721A3E81610089770D /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4746DA6E1A3E81610089770D /* Book.swift */; };
 		4746DA731A3E81610089770D /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4746DA6E1A3E81610089770D /* Book.swift */; };
 		4746DA741A3E81610089770D /* Chapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4746DA6F1A3E81610089770D /* Chapter.swift */; };
@@ -77,6 +78,7 @@
 		472EBB401A37F0AE00228EB5 /* BhagavadGitaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BhagavadGitaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		472EBB451A37F0AE00228EB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		472EBB461A37F0AE00228EB5 /* BhagavadGitaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BhagavadGitaTests.swift; sourceTree = "<group>"; };
+		473362FE1A520D300031A744 /* SectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionViewController.swift; sourceTree = "<group>"; };
 		4746DA6E1A3E81610089770D /* Book.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		4746DA6F1A3E81610089770D /* Chapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Chapter.swift; sourceTree = "<group>"; };
 		4746DA701A3E81610089770D /* JSONDeserializable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONDeserializable.swift; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 			children = (
 				47E3624D1A3FB65300AD65C5 /* BookViewController.swift */,
 				47195E671A40EAF700C3EF8F /* ChapterViewController.swift */,
+				473362FE1A520D300031A744 /* SectionViewController.swift */,
 				47195E691A410C1900C3EF8F /* UI */,
 				472EBB371A37F0AE00228EB5 /* Images.xcassets */,
 				472EBB2E1A37F0AE00228EB5 /* Supporting Files */,
@@ -329,6 +332,7 @@
 			files = (
 				472EBB311A37F0AE00228EB5 /* AppDelegate.swift in Sources */,
 				47195E711A41159C00C3EF8F /* OutroCell.swift in Sources */,
+				473362FF1A520D300031A744 /* SectionViewController.swift in Sources */,
 				47E3624E1A3FB65300AD65C5 /* BookViewController.swift in Sources */,
 				478384861A4124DC0064DB7A /* SectionCell.swift in Sources */,
 				4746DA741A3E81610089770D /* Chapter.swift in Sources */,

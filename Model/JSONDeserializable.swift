@@ -8,5 +8,6 @@
 
 protocol JSONDeserializable {
     typealias T
+
     class func deserialize(json: JSON) -> T
 }

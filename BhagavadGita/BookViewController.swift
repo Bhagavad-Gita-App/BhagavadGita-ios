@@ -8,12 +8,12 @@
 
 import UIKit
 
-class BookViewController: UITableViewController, UITableViewDelegate, UITableViewDataSource {
+class BookViewController: UITableViewController {
 
     @IBOutlet weak var chaptersView: UITableView!
 
-    let _cellReuseIdentifier: String = "chaptercell"
-    let _chapterDetailSegueIdentifier: String = "detail"
+    private let _cellReuseIdentifier: String = "chaptercell"
+    private let _chapterDetailSegueIdentifier: String = "chapterDetail"
 
     var _book: Book?
 
@@ -34,6 +34,18 @@ class BookViewController: UITableViewController, UITableViewDelegate, UITableVie
         self.chaptersView.registerNib(chapterCell, forCellReuseIdentifier: _cellReuseIdentifier)
     }
 
+    override func prepareForSegue(segue: (UIStoryboardSegue!), sender: AnyObject?) {
+        if segue.identifier == _chapterDetailSegueIdentifier {
+            let viewController: ChapterViewController = segue.destinationViewController as ChapterViewController
+            if let selectedRowIndexPath = self.chaptersView.indexPathForSelectedRow() {
+                viewController.chapter = book.chapters.filter({ c in c.chapterCount == selectedRowIndexPath.row + 1 }).first
+            }
+        }
+    }
+}
+
+extension BookViewController: UITableViewDelegate, UITableViewDataSource {
+
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.book.chapters.count
     }
@@ -45,15 +57,6 @@ class BookViewController: UITableViewController, UITableViewDelegate, UITableVie
         return cell
     }
 
-    override func prepareForSegue(segue: (UIStoryboardSegue!), sender: AnyObject?) {
-        if segue.identifier == _chapterDetailSegueIdentifier {
-            let viewController: ChapterViewController = segue.destinationViewController as ChapterViewController
-            if let selectedRowIndexPath = self.chaptersView.indexPathForSelectedRow() {
-                viewController.chapter = book.chapters.filter({ c in c.chapterCount == selectedRowIndexPath.row + 1 }).first
-            }
-        }
-    }
-
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         self.performSegueWithIdentifier(_chapterDetailSegueIdentifier, sender: self)
     }
@@ -61,6 +64,6 @@ class BookViewController: UITableViewController, UITableViewDelegate, UITableVie
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return indexPath.row == 0 || indexPath.row == 1 ? 65 : 75
     }
-    
+
 }
 

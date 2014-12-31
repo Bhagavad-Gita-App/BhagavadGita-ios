@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 floydpink. All rights reserved.
 //
 
-struct Chapter{
+struct Chapter {
     let name: String
     let title: String
     let chapterCount: Int
@@ -16,7 +16,7 @@ struct Chapter{
     let sections: [Section]
 }
 
-extension Chapter:JSONDeserializable {
+extension Chapter: JSONDeserializable {
     static func create(name: String, title: String, chapterCount: Int, subTitle: String?, intro: String?, outro: String?, sections: [Section]) -> Chapter {
         return Chapter(name: name, title: title, chapterCount: chapterCount, subTitle: subTitle, intro: intro, outro: outro, sections: sections)
     }
