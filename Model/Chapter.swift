@@ -9,7 +9,8 @@
 struct Chapter {
     let name: String
     let title: String
-    let chapterCount: Int
+    let chapterSerial: Int
+    let slokasCount: Int
     let subTitle: String?
     let intro: String?
     let outro: String?
@@ -17,8 +18,8 @@ struct Chapter {
 }
 
 extension Chapter: JSONDeserializable {
-    static func create(name: String, title: String, chapterCount: Int, subTitle: String?, intro: String?, outro: String?, sections: [Section]) -> Chapter {
-        return Chapter(name: name, title: title, chapterCount: chapterCount, subTitle: subTitle, intro: intro, outro: outro, sections: sections)
+    static func create(name: String, title: String, chapterSerial: Int, slokasCount: Int, subTitle: String?, intro: String?, outro: String?, sections: [Section]) -> Chapter {
+        return Chapter(name: name, title: title, chapterSerial: chapterSerial, slokasCount: slokasCount, subTitle: subTitle, intro: intro, outro: outro, sections: sections)
     }
 
     static func deserialize(json: JSON) -> Chapter {
@@ -26,6 +27,6 @@ extension Chapter: JSONDeserializable {
         for section in json["Sections"] {
             sections.append(Section.deserialize(section.1))
         }
-        return Chapter.create(json["Name"].stringValue, title: json["Title"].stringValue, chapterCount: json["ChapterCount"].numberValue as Int, subTitle: json["Subtitle"].stringValue, intro: json["Intro"].stringValue, outro: json["Outro"].stringValue, sections: sections)
+        return Chapter.create(json["Name"].stringValue, title: json["Title"].stringValue, chapterSerial: json["ChapterSerial"].numberValue as Int, slokasCount: json["SlokasCount"].numberValue as Int, subTitle: json["Subtitle"].stringValue, intro: json["Intro"].stringValue, outro: json["Outro"].stringValue, sections: sections)
     }
 }

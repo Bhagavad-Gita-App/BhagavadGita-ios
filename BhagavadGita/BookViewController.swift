@@ -38,7 +38,7 @@ class BookViewController: UITableViewController {
         if segue.identifier == _chapterDetailSegueIdentifier {
             let viewController: ChapterViewController = segue.destinationViewController as ChapterViewController
             if let selectedRowIndexPath = self.chaptersView.indexPathForSelectedRow() {
-                viewController.chapter = book.chapters.filter({ c in c.chapterCount == selectedRowIndexPath.row + 1 }).first
+                viewController.chapter = book.chapters.filter({ c in c.chapterSerial == selectedRowIndexPath.row + 1 }).first
             }
         }
     }

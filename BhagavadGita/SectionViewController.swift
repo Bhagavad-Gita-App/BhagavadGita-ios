@@ -18,12 +18,13 @@ class SectionViewController: UIViewController {
     var section: Section?
 
     override func viewDidLoad() {
-        println(self.chapter)
-        println(self.section)
         if let s = section {
             speakerLabel.text = s.speaker
             contentLabel.text = s.content
             meaningLabel.text = s.meaning
+
+            self.title = s.slokaNumber
+
         }
     }
 

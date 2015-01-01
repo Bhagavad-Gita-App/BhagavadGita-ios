@@ -41,7 +41,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SvY-8O-TEd">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="SvY-8O-TEd">
                                 <rect key="frame" x="16" y="72" width="568" height="520"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ChapterDetailIcon" translatesAutoresizingMaskIntoConstraints="NO" id="5Wd-rc-ohD">
@@ -90,7 +90,7 @@
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="F3J-9V-NSt" secondAttribute="trailing" constant="8" id="1O5-Ma-Gac"/>
                                     <constraint firstAttribute="trailing" secondItem="IRK-C0-mQt" secondAttribute="trailing" constant="2" id="4fl-IS-c5g"/>
-                                    <constraint firstAttribute="bottom" secondItem="IRK-C0-mQt" secondAttribute="bottom" priority="250" constant="259" id="8EG-vx-3Dq"/>
+                                    <constraint firstAttribute="bottom" secondItem="IRK-C0-mQt" secondAttribute="bottom" priority="250" constant="8" id="8EG-vx-3Dq"/>
                                     <constraint firstAttribute="centerX" secondItem="5Wd-rc-ohD" secondAttribute="centerX" id="GQ1-Mn-kSU"/>
                                     <constraint firstItem="5Wd-rc-ohD" firstAttribute="top" secondItem="SvY-8O-TEd" secondAttribute="top" constant="3" id="HPg-xC-tRy"/>
                                     <constraint firstItem="IRK-C0-mQt" firstAttribute="top" secondItem="fgf-dt-LWI" secondAttribute="bottom" constant="8" id="I4W-ED-QXw"/>

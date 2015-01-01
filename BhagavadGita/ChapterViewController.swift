@@ -46,7 +46,7 @@ class ChapterViewController: UITableViewController {
             let viewController: SectionViewController = segue.destinationViewController as SectionViewController
             if let selectedRowIndexPath = self.sectionsView.indexPathForSelectedRow() {
                 viewController.chapter = self.chapter
-                viewController.section = chapter!.sections.filter({ s in s.slokaCount == selectedRowIndexPath.row + 1 }).first
+                viewController.section = chapter!.sections.filter({ s in s.slokaSerial == selectedRowIndexPath.row + 1 }).first
             }
         }
     }
