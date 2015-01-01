@@ -24,7 +24,6 @@ class SectionViewController: UIViewController {
             meaningLabel.text = s.meaning
 
             self.title = s.slokaNumber
-
         }
     }
 

@@ -41,12 +41,11 @@ class ChapterViewController: UITableViewController {
     }
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        println("prepareForSegue")
         if segue.identifier == _sectionDetailSegueIdentifier {
             let viewController: SectionViewController = segue.destinationViewController as SectionViewController
             if let selectedRowIndexPath = self.sectionsView.indexPathForSelectedRow() {
                 viewController.chapter = self.chapter
-                viewController.section = chapter!.sections.filter({ s in s.slokaSerial == selectedRowIndexPath.row + 1 }).first
+                viewController.section = chapter!.sections.filter({ s in s.sectionSerial == selectedRowIndexPath.row + 1 }).first
             }
         }
     }
@@ -115,7 +114,6 @@ extension ChapterViewController: UITableViewDelegate, UITableViewDataSource {
     }
 
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        println("tableView didSelectRowAtIndexPath")
         self.performSegueWithIdentifier(_sectionDetailSegueIdentifier, sender: self)
     }
 
