@@ -72,13 +72,13 @@
 		472EBB2B1A37F0AE00228EB5 /* BhagavadGita.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BhagavadGita.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		472EBB2F1A37F0AE00228EB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		472EBB301A37F0AE00228EB5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		472EBB351A37F0AE00228EB5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		472EBB371A37F0AE00228EB5 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		472EBB3A1A37F0AE00228EB5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		472EBB401A37F0AE00228EB5 /* BhagavadGitaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BhagavadGitaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		472EBB451A37F0AE00228EB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		472EBB461A37F0AE00228EB5 /* BhagavadGitaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BhagavadGitaTests.swift; sourceTree = "<group>"; };
 		473362FE1A520D300031A744 /* SectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionViewController.swift; sourceTree = "<group>"; };
+		473381051A54E72F009520C0 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/Main.storyboard; sourceTree = "<group>"; };
+		473381061A54E738009520C0 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		4746DA6E1A3E81610089770D /* Book.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		4746DA6F1A3E81610089770D /* Chapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Chapter.swift; sourceTree = "<group>"; };
 		4746DA701A3E81610089770D /* JSONDeserializable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONDeserializable.swift; sourceTree = "<group>"; };
@@ -375,7 +375,7 @@
 		472EBB341A37F0AE00228EB5 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				472EBB351A37F0AE00228EB5 /* Base */,
+				473381051A54E72F009520C0 /* en */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -383,7 +383,7 @@
 		472EBB391A37F0AE00228EB5 /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				472EBB3A1A37F0AE00228EB5 /* Base */,
+				473381061A54E738009520C0 /* en */,
 			);
 			name = LaunchScreen.xib;
 			sourceTree = "<group>";
