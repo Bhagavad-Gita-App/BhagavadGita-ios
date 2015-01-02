@@ -38,6 +38,9 @@ class ChapterViewController: UITableViewController {
         var outroCell = UINib(nibName: "OutroCell", bundle: nil)
         self.sectionsView.registerNib(outroCell, forCellReuseIdentifier: _outroCellReuseIdentifier)
 
+        var shareButton: UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Action, target: self, action: "shareChapter")
+        self.navigationItem.rightBarButtonItem = shareButton
+
     }
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -48,6 +51,14 @@ class ChapterViewController: UITableViewController {
                 viewController.section = chapter!.sections.filter({ s in s.sectionSerial == selectedRowIndexPath.row + 1 }).first
             }
         }
+    }
+
+    func shareChapter() {
+        let subject: String = "\(Book.load().bookTitle) - \(chapter!.title)"
+        let items: [AnyObject] = [subject, SharingHelper.getSharingUrlFor(chapter: chapter!)]
+        let uaController = UIActivityViewController(activityItems: items, applicationActivities: nil)
+        uaController.setValue(subject, forKey: "subject")
+        self.presentViewController(uaController, animated: true, completion: nil)
     }
 
 }

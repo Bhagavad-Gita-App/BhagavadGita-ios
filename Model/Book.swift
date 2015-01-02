@@ -9,13 +9,15 @@
 struct Book {
     let bookTitle: String
     let chapters: [Chapter]
-}
 
-extension Book: JSONDeserializable {
     static func create(bookTitle: String, chapters: [Chapter]) -> Book {
         return Book(bookTitle: bookTitle, chapters: chapters)
     }
 
+}
+
+extension Book: JSONDeserializable {
+    
     static func deserialize(json: JSON) -> Book {
         var chapters = [Chapter]()
         for chapter in json["Chapters"] {
@@ -23,14 +25,19 @@ extension Book: JSONDeserializable {
         }
         return Book.create(json["BookTitle"].stringValue, chapters: chapters)
     }
-
-    static func load() -> Book {
-        let json = JSONFileReader.read(fromFile: "gita")!
-        return Book.deserialize(JSON(data: json))
-    }
 }
 
 extension Book {
+    static var _book: Book?
+
+    static func load() -> Book {
+        if _book == nil {
+            let json = JSONFileReader.read(fromFile: "gita")!
+            _book = Book.deserialize(JSON(data: json))
+        }
+        return _book!
+    }
+
     static func getChapter(atIndex index: Int) -> Chapter? {
         let book = Book.load()
         switch index {

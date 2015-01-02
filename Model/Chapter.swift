@@ -30,3 +30,17 @@ extension Chapter: JSONDeserializable {
         return Chapter.create(json["Name"].stringValue, title: json["Title"].stringValue, chapterSerial: json["ChapterSerial"].numberValue as Int, slokasCount: json["SlokasCount"].numberValue as Int, subTitle: json["Subtitle"].stringValue, intro: json["Intro"].stringValue, outro: json["Outro"].stringValue, sections: sections)
     }
 }
+
+extension Chapter {
+    static func getIndexForChapter(chapter: Chapter) -> Int? {
+        var index: Int?
+        var book = Book.load()
+        for (i, value) in enumerate(book.chapters) {
+            if chapter.chapterSerial == value.chapterSerial {
+                index = i
+                break
+            }
+        }
+        return index
+    }
+}

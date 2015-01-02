@@ -24,7 +24,18 @@ class SectionViewController: UIViewController {
             meaningLabel.text = s.meaning
 
             self.title = s.slokaNumber
+
+            var shareButton: UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Action, target: self, action: "shareSection")
+            self.navigationItem.rightBarButtonItem = shareButton
         }
+    }
+
+    func shareSection() {
+        let subject: String = "\(Book.load().bookTitle) - \(chapter!.title) - \(section!.slokaNumber)"
+        let items: [AnyObject] = [subject, SharingHelper.getSharingUrlFor(chapter: chapter!, section: section!)]
+        let uaController = UIActivityViewController(activityItems: items, applicationActivities: nil)
+        uaController.setValue(subject, forKey: "subject")
+        self.presentViewController(uaController, animated: true, completion: nil)
     }
     
 }

@@ -29,6 +29,7 @@
 		4746DA791A3E81610089770D /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4746DA711A3E81610089770D /* Section.swift */; };
 		4746DA7C1A3E81CB0089770D /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4746DA7B1A3E81CB0089770D /* SwiftyJSON.swift */; };
 		4746DA7D1A3E81CB0089770D /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4746DA7B1A3E81CB0089770D /* SwiftyJSON.swift */; };
+		477FA94D1A563A1600C70936 /* SharingHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477FA94C1A563A1600C70936 /* SharingHelper.swift */; };
 		478384861A4124DC0064DB7A /* SectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 478384851A4124DC0064DB7A /* SectionCell.swift */; };
 		47AB553D1A3F8FD5006A4955 /* ChapterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47AB553C1A3F8FD5006A4955 /* ChapterCell.swift */; };
 		47AB553F1A3F99CA006A4955 /* ChapterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 47AB553E1A3F99CA006A4955 /* ChapterCell.xib */; };
@@ -84,6 +85,7 @@
 		4746DA701A3E81610089770D /* JSONDeserializable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONDeserializable.swift; sourceTree = "<group>"; };
 		4746DA711A3E81610089770D /* Section.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
 		4746DA7B1A3E81CB0089770D /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
+		477FA94C1A563A1600C70936 /* SharingHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharingHelper.swift; sourceTree = "<group>"; };
 		478384851A4124DC0064DB7A /* SectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionCell.swift; sourceTree = "<group>"; };
 		47AB553C1A3F8FD5006A4955 /* ChapterCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChapterCell.swift; sourceTree = "<group>"; };
 		47AB553E1A3F99CA006A4955 /* ChapterCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChapterCell.xib; sourceTree = "<group>"; };
@@ -154,6 +156,7 @@
 				47E3624D1A3FB65300AD65C5 /* BookViewController.swift */,
 				47195E671A40EAF700C3EF8F /* ChapterViewController.swift */,
 				473362FE1A520D300031A744 /* SectionViewController.swift */,
+				477FA94C1A563A1600C70936 /* SharingHelper.swift */,
 				47195E691A410C1900C3EF8F /* UI */,
 				472EBB371A37F0AE00228EB5 /* Images.xcassets */,
 				472EBB2E1A37F0AE00228EB5 /* Supporting Files */,
@@ -332,6 +335,7 @@
 			files = (
 				472EBB311A37F0AE00228EB5 /* AppDelegate.swift in Sources */,
 				47195E711A41159C00C3EF8F /* OutroCell.swift in Sources */,
+				477FA94D1A563A1600C70936 /* SharingHelper.swift in Sources */,
 				473362FF1A520D300031A744 /* SectionViewController.swift in Sources */,
 				47E3624E1A3FB65300AD65C5 /* BookViewController.swift in Sources */,
 				478384861A4124DC0064DB7A /* SectionCell.swift in Sources */,
