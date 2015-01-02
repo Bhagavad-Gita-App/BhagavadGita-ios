@@ -70,5 +70,5 @@ class BhagavadGitaTests: XCTestCase {
         XCTAssert(book.chapters[18].sections.count == 27, "Number of sections in Chapter 19 on the JSON is not correct")
         XCTAssert(book.chapters[19].sections.count == 75, "Number of sections in Chapter 20 on the JSON is not correct")
     }
-
+    
 }

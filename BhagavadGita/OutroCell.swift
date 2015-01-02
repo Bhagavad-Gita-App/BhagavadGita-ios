@@ -11,5 +11,5 @@ import UIKit
 class OutroCell: UITableViewCell {
 
     @IBOutlet weak var outroLabel: UILabel!
-
+    
 }

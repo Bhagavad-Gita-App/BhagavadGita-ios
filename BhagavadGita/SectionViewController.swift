@@ -26,5 +26,5 @@ class SectionViewController: UIViewController {
             self.title = s.slokaNumber
         }
     }
-
+    
 }

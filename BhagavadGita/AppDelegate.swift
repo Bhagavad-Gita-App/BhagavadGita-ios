@@ -41,6 +41,52 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
+    func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject?) -> Bool {
+        if url.scheme != "bhagavadgitamalayalam" {
+            return false
+        }
 
+        var chapterIndex:Int?
+        var sectionIndex:Int?
+
+        if let parts = url.path?.componentsSeparatedByString("/") {
+            switch parts.count {
+            case 2:
+                chapterIndex = parts[1].toInt()
+            case 3:
+                chapterIndex = parts[1].toInt()
+                sectionIndex = parts[2].toInt()
+            default:
+                return false
+            }
+            navigateTo(chapterIndex, sectionIndex)
+        }
+        return false
+    }
+
+    func navigateTo(chapterIndex: Int?, _ sectionIndex: Int?) {
+        if let navController = self.window?.rootViewController as? UINavigationController {
+            if let storyBoard = navController.storyboard {
+                if let chapterIndexUnwrapped = chapterIndex {
+                    if let chapterVc = storyBoard.instantiateViewControllerWithIdentifier("ChapterVC") as? ChapterViewController {
+                        if let chapter = Book.getChapter(atIndex: chapterIndexUnwrapped) {
+                            chapterVc.chapter = chapter
+                            navController.pushViewController(chapterVc, animated: false)
+                            if let sectionIndexUnwrapped = sectionIndex {
+                                if let sectionVc = storyBoard.instantiateViewControllerWithIdentifier("SectionVC") as? SectionViewController {
+                                    if let section = Book.getSection(atChapterIndex: chapterIndexUnwrapped, atSectionIndex: sectionIndexUnwrapped) {
+                                        sectionVc.chapter = chapter
+                                        sectionVc.section = section
+                                        navController.pushViewController(sectionVc, animated: false)
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
 }
 

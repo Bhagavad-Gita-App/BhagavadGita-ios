@@ -64,6 +64,6 @@ extension BookViewController: UITableViewDelegate, UITableViewDataSource {
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return indexPath.row == 0 || indexPath.row == 1 ? 65 : 75
     }
-
+    
 }
 

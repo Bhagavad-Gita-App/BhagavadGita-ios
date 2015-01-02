@@ -29,3 +29,27 @@ extension Book: JSONDeserializable {
         return Book.deserialize(JSON(data: json))
     }
 }
+
+extension Book {
+    static func getChapter(atIndex index: Int) -> Chapter? {
+        let book = Book.load()
+        switch index {
+        case 0..<book.chapters.count:
+            return book.chapters[index]
+        default:
+            return nil
+        }
+    }
+
+    static func getSection(atChapterIndex chapterIndex: Int, atSectionIndex sectionIndex: Int) -> Section? {
+        if let chapter = getChapter(atIndex: chapterIndex) {
+            switch sectionIndex {
+            case 0..<chapter.sections.count:
+                return chapter.sections[sectionIndex]
+            default:
+                return nil
+            }
+        }
+        return nil
+    }
+}
