@@ -35,6 +35,11 @@ class SectionViewController: UIViewController {
         let items: [AnyObject] = [subject, SharingHelper.getSharingUrlFor(chapter: chapter!, section: section!)]
         let uaController = UIActivityViewController(activityItems: items, applicationActivities: nil)
         uaController.setValue(subject, forKey: "subject")
+        if let popoverPresentationController = uaController.popoverPresentationController {
+            popoverPresentationController.sourceView = self.view
+            //popoverPresentationController.permittedArrowDirections = UIPopoverArrowDirection.Up
+            popoverPresentationController.barButtonItem = self.navigationItem.rightBarButtonItem
+        }
         self.presentViewController(uaController, animated: true, completion: nil)
     }
     
