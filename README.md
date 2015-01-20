@@ -1,6 +1,8 @@
 ശ്രീമദ് ഭഗവദ്ഗീത | Srimad Bhagavad Gita
 ==============
 
+[![Download on the App Store](http://floydpink.github.io/BhagavadGita/images/app-store.png)](https://itunes.apple.com/us/app/bhagavad-gita-malayalam/id953008948?mt=8&uo=4)
+
 [![Srimad Bhagavad Gita](http://floydpink.github.io/BhagavadGita/images/graphic.png)](http://floydpink.github.io/BhagavadGita/)
 
 Srimad Bhagavad Gita in Malayalam with meaning of all 700 slokas and of Geeta Dhyanam and Geeta Mahatmyam. Bhagavad Gita is the most popular Hindu scripture. 
