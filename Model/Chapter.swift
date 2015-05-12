@@ -6,6 +6,8 @@
 //  Copyright (c) 2014 floydpink. All rights reserved.
 //
 
+import SwiftyJSON
+
 struct Chapter {
     let name: String
     let title: String

@@ -6,8 +6,10 @@
 //  Copyright (c) 2014 floydpink. All rights reserved.
 //
 
+import SwiftyJSON
+
 protocol JSONDeserializable {
     typealias T
 
-    class func deserialize(json: JSON) -> T
+    static func deserialize(json: JSON) -> T
 }

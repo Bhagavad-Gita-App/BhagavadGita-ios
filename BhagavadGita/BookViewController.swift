@@ -36,7 +36,7 @@ class BookViewController: UITableViewController {
 
     override func prepareForSegue(segue: (UIStoryboardSegue!), sender: AnyObject?) {
         if segue.identifier == _chapterDetailSegueIdentifier {
-            let viewController: ChapterViewController = segue.destinationViewController as ChapterViewController
+            let viewController: ChapterViewController = segue.destinationViewController as! ChapterViewController
             if let selectedRowIndexPath = self.chaptersView.indexPathForSelectedRow() {
                 viewController.chapter = book.chapters.filter({ c in c.chapterSerial == selectedRowIndexPath.row + 1 }).first
             }
@@ -51,7 +51,7 @@ extension BookViewController: UITableViewDelegate, UITableViewDataSource {
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell: ChapterCell = self.chaptersView.dequeueReusableCellWithIdentifier(_cellReuseIdentifier) as ChapterCell
+        var cell: ChapterCell = self.chaptersView.dequeueReusableCellWithIdentifier(_cellReuseIdentifier) as! ChapterCell
         cell.title?.text = self.book.chapters[indexPath.row].title
         cell.subTitle?.text = self.book.chapters[indexPath.row].subTitle
         return cell

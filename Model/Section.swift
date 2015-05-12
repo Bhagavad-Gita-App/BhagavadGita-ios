@@ -6,6 +6,8 @@
 //  Copyright (c) 2014 floydpink. All rights reserved.
 //
 
+import SwiftyJSON
+
 struct Section {
     let sectionCount: Int
     let sectionSerial: Int

@@ -39,7 +39,7 @@ class BhagavadGitaTests: XCTestCase {
 
     func testGitaBookTitle() {
         let book = Book.load()
-        XCTAssert(book.bookTitle == "ശ്രീമദ് ഭഗവദ്ഗീത (അര്‍ഥസഹിതം)", "Book title is not the expected value")
+        XCTAssert(book.bookTitle == "ശ്രീമദ് ഭഗവദ്ഗീത", "Book title is not the expected value")
     }
 
     func testGitaBookChapters() {

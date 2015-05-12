@@ -45,7 +45,7 @@ class ChapterViewController: UITableViewController {
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == _sectionDetailSegueIdentifier {
-            let viewController: SectionViewController = segue.destinationViewController as SectionViewController
+            let viewController: SectionViewController = segue.destinationViewController as! SectionViewController
             if let selectedRowIndexPath = self.sectionsView.indexPathForSelectedRow() {
                 viewController.chapter = self.chapter
                 viewController.section = chapter!.sections.filter({ s in s.sectionSerial == selectedRowIndexPath.row + 1 }).first
@@ -97,15 +97,15 @@ extension ChapterViewController: UITableViewDelegate, UITableViewDataSource {
         switch indexPath.section {
 
         case 0: // Intro
-            var introCell = self.sectionsView.dequeueReusableCellWithIdentifier(_introCellReuseIdentifier) as IntroCell
+            var introCell = self.sectionsView.dequeueReusableCellWithIdentifier(_introCellReuseIdentifier) as! IntroCell
             cell = configureIntroCell(introCell, forRowAtIndexPath: indexPath)!
 
         case 1: // Sections
-            var sectionCell = self.sectionsView.dequeueReusableCellWithIdentifier(_sectionCellReuseIdentifier) as SectionCell
+            var sectionCell = self.sectionsView.dequeueReusableCellWithIdentifier(_sectionCellReuseIdentifier) as! SectionCell
             cell = configureSectionCell(sectionCell, forRowAtIndexPath: indexPath)!
 
         default:    // Outro (and anything else)
-            var outroCell = self.sectionsView.dequeueReusableCellWithIdentifier(_outroCellReuseIdentifier) as OutroCell
+            var outroCell = self.sectionsView.dequeueReusableCellWithIdentifier(_outroCellReuseIdentifier) as! OutroCell
             cell = configureOutroCell(outroCell, forRowAtIndexPath: indexPath)!
 
         }

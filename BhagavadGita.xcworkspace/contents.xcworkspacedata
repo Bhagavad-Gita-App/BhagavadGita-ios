@@ -4,4 +4,7 @@
    <FileRef
       location = "group:BhagavadGita.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:Pods/Pods.xcodeproj">
+   </FileRef>
 </Workspace>
