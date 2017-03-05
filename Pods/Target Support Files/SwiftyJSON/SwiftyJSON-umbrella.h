@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double Pods_BhagavadGitaTestsVersionNumber;
-FOUNDATION_EXPORT const unsigned char Pods_BhagavadGitaTestsVersionString[];
+FOUNDATION_EXPORT double SwiftyJSONVersionNumber;
+FOUNDATION_EXPORT const unsigned char SwiftyJSONVersionString[];
 

@@ -17,22 +17,22 @@ struct Section {
     let meaning: String
     let speaker: String?
     
-    static func create(sectionCount: Int, sectionSerial: Int, slokasCount: Int, slokaNumber: String, content: String, meaning: String, speaker: String?) -> Section {
+    static func create(_ sectionCount: Int, sectionSerial: Int, slokasCount: Int, slokaNumber: String, content: String, meaning: String, speaker: String?) -> Section {
         return Section(sectionCount: sectionCount, sectionSerial: sectionSerial, slokasCount: slokasCount, slokaNumber: slokaNumber, content: content, meaning: meaning, speaker: speaker)
     }
 
 }
 
 extension Section: JSONDeserializable {
-    static func deserialize(json: JSON) -> Section {
+    static func deserialize(_ json: JSON) -> Section {
         return Section.create(json["SectionCount"].numberValue as Int, sectionSerial: json["SectionSerial"].numberValue as Int, slokasCount: json["SlokasCount"].numberValue as Int, slokaNumber: json["SlokaNumber"].stringValue, content: json["Content"].stringValue, meaning: json["Meaning"].stringValue, speaker: json["Speaker"].stringValue)
     }
 }
 
 extension Section {
-    static func getIndexForSectionInChapter(section: Section, chapter: Chapter) -> Int? {
+    static func getIndexForSectionInChapter(_ section: Section, chapter: Chapter) -> Int? {
         var index: Int?
-        for (i, value) in enumerate(chapter.sections) {
+        for (i, value) in chapter.sections.enumerated() {
             if section.sectionSerial == value.sectionSerial {
                 index = i
                 break

@@ -9,7 +9,7 @@
 import SwiftyJSON
 
 protocol JSONDeserializable {
-    typealias T
+    associatedtype T
 
-    static func deserialize(json: JSON) -> T
+    static func deserialize(_ json: JSON) -> T
 }

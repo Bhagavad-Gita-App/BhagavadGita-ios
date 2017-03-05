@@ -13,10 +13,10 @@ struct Constants {
 }
 
 class SharingHelper {
-    class func getSharingUrlFor(#chapter: Chapter) -> NSURL {
-        return NSURL(string: "\(Constants.baseSharingUrl)\(Chapter.getIndexForChapter(chapter)!)/")!
+    class func getSharingUrlFor(_ chapter: Chapter) -> URL {
+        return URL(string: "\(Constants.baseSharingUrl)\(Chapter.getIndexForChapter(chapter)!)/")!
     }
-    class func getSharingUrlFor(#chapter: Chapter, section: Section) -> NSURL {
-        return NSURL(string: "\(Constants.baseSharingUrl)\(Chapter.getIndexForChapter(chapter)!)/\(Section.getIndexForSectionInChapter(section, chapter: chapter)!)/")!
+    class func getSharingUrlFor(_ chapter: Chapter, section: Section) -> URL {
+        return URL(string: "\(Constants.baseSharingUrl)\(Chapter.getIndexForChapter(chapter)!)/\(Section.getIndexForSectionInChapter(section, chapter: chapter)!)/")!
     }
 }

@@ -11,11 +11,11 @@
 import Foundation
 
 class JSONFileReader {
-    class func read(fromFile file: String) -> NSData? {
-        let path = NSBundle(forClass: self).pathForResource(file, ofType: "json")
+    class func read(fromFile file: String) -> Data? {
+        let path = Bundle(for: self).path(forResource: file, ofType: "json")
 
         if path != nil {
-            let data = NSData(contentsOfFile: path!)!
+            let data = try! Data(contentsOf: URL(fileURLWithPath: path!))
             return data
         }
 

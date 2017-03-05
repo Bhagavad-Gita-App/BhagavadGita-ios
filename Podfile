@@ -4,10 +4,10 @@ platform :ios, '8.0'
 use_frameworks!
 
 target 'BhagavadGita' do
-    pod "SwiftyJSON", ">= 2.2"
+    pod "SwiftyJSON", ">= 3.1"
 end
 
 target 'BhagavadGitaTests' do
-    pod "SwiftyJSON", ">= 2.2"
+    pod "SwiftyJSON", ">= 3.1"
 end
 

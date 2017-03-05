@@ -20,11 +20,11 @@ struct Chapter {
 }
 
 extension Chapter: JSONDeserializable {
-    static func create(name: String, title: String, chapterSerial: Int, slokasCount: Int, subTitle: String?, intro: String?, outro: String?, sections: [Section]) -> Chapter {
+    static func create(_ name: String, title: String, chapterSerial: Int, slokasCount: Int, subTitle: String?, intro: String?, outro: String?, sections: [Section]) -> Chapter {
         return Chapter(name: name, title: title, chapterSerial: chapterSerial, slokasCount: slokasCount, subTitle: subTitle, intro: intro, outro: outro, sections: sections)
     }
 
-    static func deserialize(json: JSON) -> Chapter {
+    static func deserialize(_ json: JSON) -> Chapter {
         var sections = [Section]()
         for section in json["Sections"] {
             sections.append(Section.deserialize(section.1))
@@ -34,10 +34,10 @@ extension Chapter: JSONDeserializable {
 }
 
 extension Chapter {
-    static func getIndexForChapter(chapter: Chapter) -> Int? {
+    static func getIndexForChapter(_ chapter: Chapter) -> Int? {
         var index: Int?
-        var book = Book.load()
-        for (i, value) in enumerate(book.chapters) {
+        let book = Book.load()
+        for (i, value) in book.chapters.enumerated() {
             if chapter.chapterSerial == value.chapterSerial {
                 index = i
                 break

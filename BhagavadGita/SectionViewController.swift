@@ -25,14 +25,14 @@ class SectionViewController: UIViewController {
 
             self.title = s.slokaNumber
 
-            var shareButton: UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Action, target: self, action: "shareSection")
+            let shareButton: UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(SectionViewController.shareSection))
             self.navigationItem.rightBarButtonItem = shareButton
         }
     }
 
     func shareSection() {
         let subject: String = "\(Book.load().bookTitle) - \(chapter!.title) - \(section!.slokaNumber)"
-        let items: [AnyObject] = [subject, SharingHelper.getSharingUrlFor(chapter: chapter!, section: section!)]
+        let items: [Any] = [subject as AnyObject, SharingHelper.getSharingUrlFor(chapter!, section: section!)]
         let uaController = UIActivityViewController(activityItems: items, applicationActivities: nil)
         uaController.setValue(subject, forKey: "subject")
         if let popoverPresentationController = uaController.popoverPresentationController {
@@ -40,7 +40,7 @@ class SectionViewController: UIViewController {
             //popoverPresentationController.permittedArrowDirections = UIPopoverArrowDirection.Up
             popoverPresentationController.barButtonItem = self.navigationItem.rightBarButtonItem
         }
-        self.presentViewController(uaController, animated: true, completion: nil)
+        self.present(uaController, animated: true, completion: nil)
     }
     
 }

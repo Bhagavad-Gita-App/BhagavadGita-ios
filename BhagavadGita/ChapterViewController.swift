@@ -12,13 +12,13 @@ class ChapterViewController: UITableViewController {
 
     @IBOutlet weak var sectionsView: UITableView!
 
-    private let _introCellReuseIdentifier: String = "introcell"
+    fileprivate let _introCellReuseIdentifier: String = "introcell"
 
-    private let _sectionCellReuseIdentifier: String = "sectioncell"
+    fileprivate let _sectionCellReuseIdentifier: String = "sectioncell"
 
-    private let _outroCellReuseIdentifier: String = "outrocell"
+    fileprivate let _outroCellReuseIdentifier: String = "outrocell"
 
-    private let _sectionDetailSegueIdentifier: String = "sectionDetail"
+    fileprivate let _sectionDetailSegueIdentifier: String = "sectionDetail"
 
     var chapter: Chapter?
 
@@ -29,24 +29,24 @@ class ChapterViewController: UITableViewController {
 
         self.title = chapter!.title
 
-        var introCell = UINib(nibName: "IntroCell", bundle: nil)
-        self.sectionsView.registerNib(introCell, forCellReuseIdentifier: _introCellReuseIdentifier)
+        let introCell = UINib(nibName: "IntroCell", bundle: nil)
+        self.sectionsView.register(introCell, forCellReuseIdentifier: _introCellReuseIdentifier)
 
-        var sectionCell = UINib(nibName: "SectionCell", bundle: nil)
-        self.sectionsView.registerNib(sectionCell, forCellReuseIdentifier: _sectionCellReuseIdentifier)
+        let sectionCell = UINib(nibName: "SectionCell", bundle: nil)
+        self.sectionsView.register(sectionCell, forCellReuseIdentifier: _sectionCellReuseIdentifier)
 
-        var outroCell = UINib(nibName: "OutroCell", bundle: nil)
-        self.sectionsView.registerNib(outroCell, forCellReuseIdentifier: _outroCellReuseIdentifier)
+        let outroCell = UINib(nibName: "OutroCell", bundle: nil)
+        self.sectionsView.register(outroCell, forCellReuseIdentifier: _outroCellReuseIdentifier)
 
-        var shareButton: UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Action, target: self, action: "shareChapter")
+        let shareButton: UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(ChapterViewController.shareChapter))
         self.navigationItem.rightBarButtonItem = shareButton
 
     }
 
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == _sectionDetailSegueIdentifier {
-            let viewController: SectionViewController = segue.destinationViewController as! SectionViewController
-            if let selectedRowIndexPath = self.sectionsView.indexPathForSelectedRow() {
+            let viewController: SectionViewController = segue.destination as! SectionViewController
+            if let selectedRowIndexPath = self.sectionsView.indexPathForSelectedRow {
                 viewController.chapter = self.chapter
                 viewController.section = chapter!.sections.filter({ s in s.sectionSerial == selectedRowIndexPath.row + 1 }).first
             }
@@ -55,7 +55,7 @@ class ChapterViewController: UITableViewController {
 
     func shareChapter() {
         let subject: String = "\(Book.load().bookTitle) - \(chapter!.title)"
-        let items: [AnyObject] = [subject, SharingHelper.getSharingUrlFor(chapter: chapter!)]
+        let items: [Any] = [subject as AnyObject, SharingHelper.getSharingUrlFor(chapter!)]
         let uaController = UIActivityViewController(activityItems: items, applicationActivities: nil)
         uaController.setValue(subject, forKey: "subject")
         if let popoverPresentationController = uaController.popoverPresentationController {
@@ -63,19 +63,19 @@ class ChapterViewController: UITableViewController {
             //popoverPresentationController.permittedArrowDirections = UIPopoverArrowDirection.Up
             popoverPresentationController.barButtonItem = self.navigationItem.rightBarButtonItem
         }
-        self.presentViewController(uaController, animated: true, completion: nil)
+        self.present(uaController, animated: true, completion: nil)
     }
 
 }
 
-extension ChapterViewController: UITableViewDelegate, UITableViewDataSource {
+extension ChapterViewController {
 
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         // if we have outro, total sections will be three, otherwise 2
         return chapter!.outro!.isEmpty ? 2 : 3
     }
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
 
         case 0: // intro
@@ -90,29 +90,29 @@ extension ChapterViewController: UITableViewDelegate, UITableViewDataSource {
         }
     }
 
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
         var cell: UITableViewCell
 
         switch indexPath.section {
 
         case 0: // Intro
-            var introCell = self.sectionsView.dequeueReusableCellWithIdentifier(_introCellReuseIdentifier) as! IntroCell
+            let introCell = self.sectionsView.dequeueReusableCell(withIdentifier: _introCellReuseIdentifier) as! IntroCell
             cell = configureIntroCell(introCell, forRowAtIndexPath: indexPath)!
 
         case 1: // Sections
-            var sectionCell = self.sectionsView.dequeueReusableCellWithIdentifier(_sectionCellReuseIdentifier) as! SectionCell
+            let sectionCell = self.sectionsView.dequeueReusableCell(withIdentifier: _sectionCellReuseIdentifier) as! SectionCell
             cell = configureSectionCell(sectionCell, forRowAtIndexPath: indexPath)!
 
         default:    // Outro (and anything else)
-            var outroCell = self.sectionsView.dequeueReusableCellWithIdentifier(_outroCellReuseIdentifier) as! OutroCell
+            let outroCell = self.sectionsView.dequeueReusableCell(withIdentifier: _outroCellReuseIdentifier) as! OutroCell
             cell = configureOutroCell(outroCell, forRowAtIndexPath: indexPath)!
 
         }
 
         // put estimated cell height in cache if needed
         if (!isEstimatedRowHeightInCache(indexPath)) {
-            let cellSize: CGSize = cell.systemLayoutSizeFittingSize(CGSizeMake(self.view.frame.size.width, 0), withHorizontalFittingPriority: 1000.0, verticalFittingPriority: 50.0)
+            let cellSize: CGSize = cell.systemLayoutSizeFitting(CGSize(width: self.view.frame.size.width, height: 0), withHorizontalFittingPriority: 1000.0, verticalFittingPriority: 50.0)
             putEstimatedCellHeightToCache(indexPath, height: cellSize.height)
         }
 
@@ -120,7 +120,7 @@ extension ChapterViewController: UITableViewDelegate, UITableViewDataSource {
 
     }
 
-    override func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    override func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         let estimatedHeight = getEstimatedCellHeightFromCache(indexPath, defaultHeight: 0)
         if estimatedHeight != 0 {
             return estimatedHeight
@@ -129,41 +129,41 @@ extension ChapterViewController: UITableViewDelegate, UITableViewDataSource {
         return UITableViewAutomaticDimension
     }
 
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        self.performSegueWithIdentifier(_sectionDetailSegueIdentifier, sender: self)
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.performSegue(withIdentifier: _sectionDetailSegueIdentifier, sender: self)
     }
 
-    func configureIntroCell(cell: IntroCell?, forRowAtIndexPath: NSIndexPath) -> IntroCell? {
+    func configureIntroCell(_ cell: IntroCell?, forRowAtIndexPath: IndexPath) -> IntroCell? {
         cell?.introLabel.text = chapter?.intro
-        cell?.introLabel.font = UIFont.systemFontOfSize(14.0)
+        cell?.introLabel.font = UIFont.systemFont(ofSize: 14.0)
 
         cell?.titleLabel.text = chapter?.title
-        cell?.titleLabel.font = UIFont.boldSystemFontOfSize(22.0)
+        cell?.titleLabel.font = UIFont.boldSystemFont(ofSize: 22.0)
 
         cell?.layoutIfNeeded()
 
         return cell
     }
 
-    func configureSectionCell(cell: SectionCell?, forRowAtIndexPath indexPath: NSIndexPath) -> SectionCell? {
-        var section = chapter!.sections[indexPath.row]
+    func configureSectionCell(_ cell: SectionCell?, forRowAtIndexPath indexPath: IndexPath) -> SectionCell? {
+        let section = chapter!.sections[indexPath.row]
         cell?.speakerLabel?.text = section.speaker
-        cell?.speakerLabel.font = UIFont.boldSystemFontOfSize(15.0)
+        cell?.speakerLabel.font = UIFont.boldSystemFont(ofSize: 15.0)
 
         cell?.contentLabel.text = section.content
-        cell?.contentLabel.font = UIFont.boldSystemFontOfSize(17.0)
+        cell?.contentLabel.font = UIFont.boldSystemFont(ofSize: 17.0)
 
         cell?.meaningLabel.text = section.meaning
-        cell?.meaningLabel.font = UIFont.systemFontOfSize(17.0)
+        cell?.meaningLabel.font = UIFont.systemFont(ofSize: 17.0)
 
         cell?.layoutIfNeeded()
 
         return cell
     }
 
-    func configureOutroCell(cell: OutroCell?, forRowAtIndexPath indexPath: NSIndexPath) -> OutroCell? {
+    func configureOutroCell(_ cell: OutroCell?, forRowAtIndexPath indexPath: IndexPath) -> OutroCell? {
         cell?.outroLabel.text = chapter?.outro
-        cell?.outroLabel.font = UIFont.systemFontOfSize(14.0)
+        cell?.outroLabel.font = UIFont.systemFont(ofSize: 14.0)
 
         cell?.layoutIfNeeded()
 
@@ -172,17 +172,17 @@ extension ChapterViewController: UITableViewDelegate, UITableViewDataSource {
 
     // MARK: - estimated height cache methods
     // check if this row's height is in cache
-    func isEstimatedRowHeightInCache(indexPath: NSIndexPath) -> Bool {
+    func isEstimatedRowHeightInCache(_ indexPath: IndexPath) -> Bool {
         return getEstimatedCellHeightFromCache(indexPath, defaultHeight: 0) > 0
     }
 
     // put height to cache
-    func putEstimatedCellHeightToCache(indexPath: NSIndexPath, height: CGFloat) {
-        estimatedRowHeightCache["\(indexPath.section)-\(indexPath.row)"] = height
+    func putEstimatedCellHeightToCache(_ indexPath: IndexPath, height: CGFloat) {
+        estimatedRowHeightCache["\(indexPath.section)-\(indexPath.row)"] = height as NSNumber?
     }
 
     // get height from cache
-    func getEstimatedCellHeightFromCache(indexPath: NSIndexPath, defaultHeight: CGFloat) -> CGFloat {
+    func getEstimatedCellHeightFromCache(_ indexPath: IndexPath, defaultHeight: CGFloat) -> CGFloat {
 
         if let estimatedHeight = estimatedRowHeightCache["\(indexPath.section)-\(indexPath.row)"] {
             // println("\(indexPath.section)-\(indexPath.row) is cached: \(estimatedHeight)")

@@ -12,7 +12,7 @@ struct Book {
     let bookTitle: String
     let chapters: [Chapter]
 
-    static func create(bookTitle: String, chapters: [Chapter]) -> Book {
+    static func create(_ bookTitle: String, chapters: [Chapter]) -> Book {
         return Book(bookTitle: bookTitle, chapters: chapters)
     }
 
@@ -20,7 +20,7 @@ struct Book {
 
 extension Book: JSONDeserializable {
     
-    static func deserialize(json: JSON) -> Book {
+    static func deserialize(_ json: JSON) -> Book {
         var chapters = [Chapter]()
         for chapter in json["Chapters"] {
             chapters.append(Chapter.deserialize(chapter.1))
